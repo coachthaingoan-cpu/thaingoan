@@ -4,7 +4,7 @@
   var ENDPOINT = 'https://script.google.com/macros/s/AKfycbzVv_4f-BZKnlcRw48q89jmtYKAjD6To7Qu_i4j21tG2KSu9RdLm1yz0vMdY--Nlb8pPw/exec';
   var ZALO = '0914309986';
 
-  var css = '.mrp{border:0;padding:0;border-radius:16px;max-width:420px;width:calc(100% - 24px);background:#F7F2E8;color:#14262B;font-family:"Be Vietnam Pro",system-ui,sans-serif}' +
+  var css = '.mrp{border:0;padding:0;margin:auto;border-radius:16px;max-width:420px;width:calc(100% - 24px);background:#F7F2E8;color:#14262B;font-family:"Be Vietnam Pro",system-ui,sans-serif}' +
     '.mrp::backdrop{background:rgba(11,33,40,.72)}' +
     '.mrp-in{padding:22px 20px 20px;max-height:calc(100vh - 24px);overflow:auto}' +
     '.mrp h3{font:700 24px/30px "Cormorant Garamond",Georgia,serif;margin:0 32px 4px 0}' +
