@@ -269,7 +269,7 @@ h2{font-size:28px;line-height:36px}
       <li class="now" aria-current="step">Nhận link</li>
     </ol>
     <h1>Chỗ của chị đã được giữ. Mang số tiền về tay tháng 11 vào buổi 08/12 để thấy tiền nhà mình đang rò ở đâu.</h1>
-    <p class="sub">Hẹn chị 20h00 Thứ Ba 08/12/2026. Lưu link vào phòng và thêm buổi live vào lịch ngay bây giờ.</p>
+    <p class="sub">Hẹn chị 20h00 Thứ Ba 08/12/2026. Thêm buổi live vào lịch ngay bây giờ. Link Zoom sẽ được gửi riêng qua email và Zalo của chị.</p>
     <svg class="illus" viewBox="0 0 380 150" role="img" aria-labelledby="ill">
       <title id="ill">Lịch hẹn buổi live Thứ Ba 8 tháng 12 lúc 20h00, 90 phút</title>
       <g fill="none" stroke="#C9A96A" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><rect x="20" y="22" width="120" height="112" rx="10"/><path d="M20 52h120M52 12v20M108 12v20"/><circle cx="236" cy="78" r="44"/><path d="M236 50v28l18 12"/><path d="M312 60l10 10 22-24" stroke="#9FD3B4" stroke-width="2"/></g>
@@ -304,16 +304,15 @@ h2{font-size:28px;line-height:36px}
       <dl class="info">
         <div><dt>Ngày</dt><dd>Thứ Ba 08/12/2026</dd></div>
         <div><dt>Giờ</dt><dd>20h00 đến 21h30, giờ Việt Nam</dd></div>
-        <div><dt>Hình thức</dt><dd><span class="ph">[ZOOM, CHỜ XÁC NHẬN]</span></dd></div>
-        <div><dt>Mật khẩu</dt><dd><span class="ph">[MẬT KHẨU ZOOM]</span></dd></div>
+        <div><dt>Hình thức</dt><dd>Live trên Zoom</dd></div>
+        <div><dt>Link vào phòng</dt><dd>Gửi qua email và Zalo trong 24 giờ</dd></div>
         <div><dt>Bản ghi</dt><dd>Gửi trong 24 giờ sau buổi</dd></div>
       </dl>
       <div class="btns">
-        <a class="btn" id="zoom" href="#" target="_blank" rel="noopener">Mở link vào phòng</a>
-        <a class="btn ghost" id="gcal" href="#" target="_blank" rel="noopener">Thêm vào Google Calendar</a>
+                <a class="btn ghost" id="gcal" href="#" target="_blank" rel="noopener">Thêm vào Google Calendar</a>
       </div>
       <button class="btn ghost" type="button" id="ics" style="margin-top:10px">Tải file lịch cho iPhone, Outlook</button>
-      <p class="small">Link vào phòng cũng được gửi vào email chị điền khi giữ chỗ. Cần hỗ trợ, chị nhắn Zalo <a href="https://zalo.me/0914309986" target="_blank" rel="noopener"><b>0914 309 986</b></a>.</p>
+      <p class="small">Link Zoom và mật khẩu được gửi riêng cho chị qua email và Zalo chị điền khi giữ chỗ, trong vòng 24 giờ sau khi thanh toán. Chưa nhận được hoặc cần hỗ trợ, chị nhắn Zalo <a href="https://zalo.me/0914309986" target="_blank" rel="noopener"><b>0914 309 986</b></a>.</p>
     </section>
 
     <section class="box" aria-labelledby="h-prep">
@@ -345,7 +344,7 @@ h2{font-size:28px;line-height:36px}
 <script>
 (function () {
   /* Cấu hình: thay các giá trị trong ngoặc vuông. */
-  var CONFIG = { zoom: '[LINK ZOOM]', title: 'Buổi live 90 phút cùng Thái Ngoan', start: '20261208T130000Z', end: '20261208T143000Z' };
+  var CONFIG = { zoom: '', title: 'Buổi live 90 phút cùng Thái Ngoan', start: '20261208T130000Z', end: '20261208T143000Z' };
   function isPh(v) { return !v || v.charAt(0) === '['; }
   function track(e, d) { try { if (typeof fbq === 'function') { fbq('track', e, d || {}); } } catch (x) {} }
   var q = window.location.search;
@@ -354,9 +353,7 @@ h2{font-size:28px;line-height:36px}
   try { var b = JSON.parse(sessionStorage.getItem('mr_buyer') || 'null'); if (b && b.bump) { kit = true; } } catch (x) {}
   if (kit) { document.body.classList.add('has-kit'); }
 
-  var details = 'Live 90 phút, 20h00 đến 21h30 giờ Việt Nam.\nLink vào phòng: ' + CONFIG.zoom + '\nChuẩn bị: giấy bút, số tiền về tay tháng 11 (số tròn là đủ), phiếu Money Root 1 trang gửi kèm email nhắc lịch.';
-  var zoom = document.getElementById('zoom');
-  if (isPh(CONFIG.zoom)) { zoom.addEventListener('click', function (e) { e.preventDefault(); alert('Link vào phòng sẽ có ở đây.'); }); } else { zoom.href = CONFIG.zoom; }
+  var details = 'Live 90 phút, 20h00 đến 21h30 giờ Việt Nam.\nLink vào phòng: gửi qua email và Zalo.'+'\nChuẩn bị: giấy bút, số tiền về tay tháng 11 (số tròn là đủ), phiếu Money Root 1 trang gửi kèm email nhắc lịch.';
   document.getElementById('gcal').href = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=' + encodeURIComponent(CONFIG.title) +
     '&dates=' + CONFIG.start + '/' + CONFIG.end + '&details=' + encodeURIComponent(details) + '&location=' + encodeURIComponent(isPh(CONFIG.zoom) ? 'Online' : CONFIG.zoom);
   document.getElementById('ics').addEventListener('click', function () {
