@@ -659,7 +659,7 @@ h2{font-size:28px;line-height:36px}
 <script>
 (function () {
   /* Cấu hình: thay các giá trị trong ngoặc vuông. Trước openAt form là đăng ký nhận tin; từ openAt form chuyển sang thanh toán. Xem thử trạng thái mở bán: thêm ?preview=open. */
-  var CONFIG = { formEndpoint: '[FORM_ENDPOINT]', nextUrl: '08-thanh-toan-reset.html', openAt: '2026-12-28T00:00:00+07:00' };
+  var CONFIG = { formEndpoint: 'https://script.google.com/macros/s/AKfycbzVv_4f-BZKnlcRw48q89jmtYKAjD6To7Qu_i4j21tG2KSu9RdLm1yz0vMdY--Nlb8pPw/exec', nextUrl: '08-thanh-toan-reset.html', openAt: '2026-12-28T00:00:00+07:00' };
   function isPh(v) { return !v || v.charAt(0) === '['; }
   function track(e, d) { try { if (typeof fbq === 'function') { fbq('track', e, d || {}); } } catch (x) {} }
   function pad(n) { return n < 10 ? '0' + n : String(n); }
@@ -701,7 +701,7 @@ h2{font-size:28px;line-height:36px}
       try { sessionStorage.setItem('mr_reset_buyer', JSON.stringify(buyer)); } catch (x) {}
       track('Lead', { content_name: o ? '7-Day Money Reset' : '7-Day Money Reset, chờ mở bán' });
       if (!isPh(CONFIG.formEndpoint)) {
-        try { var fd = new FormData(); Object.keys(buyer).forEach(function (k) { fd.append(k, buyer[k]); }); fd.append('trangthai', o ? 'sang-thanh-toan' : 'cho-mo-ban'); fd.append('source', '07-7-day-money-reset'); fetch(CONFIG.formEndpoint, { method: 'POST', body: fd, mode: 'no-cors', keepalive: true }); } catch (x) {}
+        try { var fd = new FormData(); Object.keys(buyer).forEach(function (k) { fd.append(k, buyer[k]); }); fd.append('trangthai', o ? 'sang-thanh-toan' : 'cho-mo-ban'); fd.append('source', '07-7-day-money-reset'); fetch(CONFIG.formEndpoint, { method: 'POST', body: new URLSearchParams(fd), mode: 'no-cors', keepalive: true }); } catch (x) {}
       }
       if (o) { window.location.href = CONFIG.nextUrl + (force ? '?preview=open' : ''); } else { form.closest('[data-box]').classList.add('sent'); }
     });

@@ -619,7 +619,7 @@ h2{font-size:28px;line-height:36px}
 <script>
 (function () {
   /* Cấu hình: thay các giá trị trong ngoặc vuông. Phiếu không tự xét đạt: Thái Ngoan và Nhi đọc từng phiếu, nhắn Zalo trong 48 giờ. */
-  var CONFIG = { formEndpoint: '[FORM_ENDPOINT]', video: '[LINK VIDEO]' };
+  var CONFIG = { formEndpoint: 'https://script.google.com/macros/s/AKfycbzVv_4f-BZKnlcRw48q89jmtYKAjD6To7Qu_i4j21tG2KSu9RdLm1yz0vMdY--Nlb8pPw/exec', video: '[LINK VIDEO]' };
   /* Khung video: dán link YouTube, Vimeo hoặc file .mp4 vào CONFIG.video là video tự hiện ở cả 2 khung. */
   (function () {
     var v = CONFIG.video;
@@ -669,7 +669,7 @@ h2{font-size:28px;line-height:36px}
       c4_gia_dinh: radio('q4a'), c4_vo_chong: radio('q4b'), c4_muc_hieu: radio('q4c'), c4_chong_du: radio('q4d'),
       c5: txt('q5'), c6_cam_ket: checks('q6').join(' | '), c6_hoc_phi: radio('q6b') };
     if (!isPh(CONFIG.formEndpoint)) {
-      try { var fd = new FormData(); Object.keys(a).forEach(function (k) { fd.append(k, a[k]); }); fd.append('source', '05-ung-tuyen-rooted-plan-call'); fetch(CONFIG.formEndpoint, { method: 'POST', body: fd, mode: 'no-cors', keepalive: true }); } catch (x) {}
+      try { var fd = new FormData(); Object.keys(a).forEach(function (k) { fd.append(k, a[k]); }); fd.append('source', '05-ung-tuyen-rooted-plan-call'); fetch(CONFIG.formEndpoint, { method: 'POST', body: new URLSearchParams(fd), mode: 'no-cors', keepalive: true }); } catch (x) {}
     }
     track('SubmitApplication', { hoc_phi: a.c6_hoc_phi });
     document.body.classList.add('done');
