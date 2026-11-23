@@ -327,7 +327,7 @@ h2{font-size:28px;line-height:36px}
       <li>Nhận link</li>
     </ol>
     <h1>Còn 1 bước để giữ chỗ buổi 08/12 và biết tiền nhà mình đang rò ở đâu.</h1>
-    <p class="sub">Chị xem lại đơn và thanh toán. Link vào phòng gửi ngay sau khi thanh toán xong.</p>
+    <p class="sub">Chị xem lại đơn và thanh toán. Chị chuyển khoản qua mã QR, link vào phòng gửi qua email và Zalo trong 24 giờ.</p>
   </div>
 </header>
 
@@ -359,7 +359,7 @@ h2{font-size:28px;line-height:36px}
         <div class="sum"><span>Tổng thanh toán</span><strong data-total>299.000đ</strong></div>
       </div>
       <button class="btn" type="button" data-pay>Thanh toán 299.000đ</button>
-      <p class="secure">Thanh toán qua <span class="ph">[CỔNG THANH TOÁN]</span>.</p>
+      <p class="secure">Chuyển khoản qua mã VietQR vào tài khoản hộ kinh doanh ACB.</p>
 
       <div class="bump" id="bump">
         <span class="flag">Chỉ thêm được ở bước này</span>
@@ -410,7 +410,7 @@ h2{font-size:28px;line-height:36px}
       <h2 id="h-final">Hoàn tất giữ chỗ</h2>
       <div class="sum" style="padding-top:4px"><span>Tổng thanh toán</span><strong data-total>299.000đ</strong></div>
       <button class="btn" type="button" data-pay>Thanh toán 299.000đ</button>
-      <p class="secure">Sau khi thanh toán, chị chuyển sang trang xác nhận và nhận link vào phòng.</p>
+      <p class="secure">Chuyển khoản xong, link vào phòng gửi qua email và Zalo trong 24 giờ.</p>
     </section>
 
     <p class="basis"><b>Cơ sở:</b> Bari Tessler khuyên các cặp đôi hẹn nhau một buổi nói chuyện về tiền đều đặn và thống nhất rõ ai làm gì với tiền (Bari Tessler, The Art of Money, 2016. Bản dịch của đội ngũ.)</p>
@@ -424,6 +424,7 @@ h2{font-size:28px;line-height:36px}
   </div>
 </footer>
 
+<script src="pay.js"></script>
 <script>
 (function () {
   /* Cấu hình: thay các giá trị trong ngoặc vuông. Cổng thanh toán chuyển về 03-oto-ve-vip.html khi thanh toán thành công. */
@@ -453,6 +454,7 @@ h2{font-size:28px;line-height:36px}
     b.addEventListener('click', function () {
       try { var s = buyer || {}; s.bump = check.checked; sessionStorage.setItem('mr_buyer', JSON.stringify(s)); } catch (x) {}
       track('InitiateCheckout', { value: total(), currency: 'VND', content_name: 'Money Root Workshop' });
+      if (window.MRPay) { MRPay.open({ amount: total(), prefix: 'MR', goi: check.checked ? 'Workshop + Money Date Kit' : 'Workshop', next: CONFIG.previewNext }); return; }
       var link = check.checked ? CONFIG.payLinkBump : CONFIG.payLink;
       window.location.href = isPh(link) ? CONFIG.previewNext : link;
     });
