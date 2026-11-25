@@ -371,7 +371,7 @@ h2{font-size:28px;line-height:36px}
           <div><b data-m>00</b><span>phút</span></div>
           <div><b data-s>00</b><span>giây</span></div>
         </div>
-        <form class="reg" novalidate>
+        <form data-vnc-off class="reg" novalidate>
           <div class="field"><label for="h-name">Họ và tên</label><input id="h-name" name="fullname" type="text" autocomplete="name" placeholder="Nguyễn Thị Lan"><p class="err">Chị điền họ và tên giúp nhé.</p></div>
           <div class="field"><label for="h-email">Email nhận link vào phòng</label><input id="h-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="ten@email.com"><p class="err">Email chưa đúng định dạng.</p></div>
           <div class="field"><label for="h-zalo">Số điện thoại Zalo</label><input id="h-zalo" name="zalo" type="tel" autocomplete="tel" inputmode="tel" placeholder="09xx xxx xxx"><p class="err">Số điện thoại Zalo cần 10 chữ số, bắt đầu bằng 0.</p></div>
@@ -779,7 +779,7 @@ h2{font-size:28px;line-height:36px}
         <div><b data-m>00</b><span>phút</span></div>
         <div><b data-s>00</b><span>giây</span></div>
       </div>
-      <form class="reg" novalidate>
+      <form data-vnc-off class="reg" novalidate>
         <div class="field"><label for="f-name">Họ và tên</label><input id="f-name" name="fullname" type="text" autocomplete="name" placeholder="Nguyễn Thị Lan"><p class="err">Chị điền họ và tên giúp nhé.</p></div>
         <div class="field"><label for="f-email">Email nhận link vào phòng</label><input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="ten@email.com"><p class="err">Email chưa đúng định dạng.</p></div>
         <div class="field"><label for="f-zalo">Số điện thoại Zalo</label><input id="f-zalo" name="zalo" type="tel" autocomplete="tel" inputmode="tel" placeholder="09xx xxx xxx"><p class="err">Số điện thoại Zalo cần 10 chữ số, bắt đầu bằng 0.</p></div>
@@ -843,6 +843,7 @@ h2{font-size:28px;line-height:36px}
       var buyer = { fullname: n.value.trim(), email: m.value.trim(), zalo: clean(z.value) };
       try { sessionStorage.setItem('mr_buyer', JSON.stringify(buyer)); } catch (x) {}
       track('Lead', { content_name: 'Money Root Workshop' });
+      if (window.vncSend) { window.vncSend('lead', { fullname: buyer.fullname, email: buyer.email, zalo: buyer.zalo }); }
       if (!isPh(CONFIG.formEndpoint)) {
         try {
           var fd = new FormData();
@@ -882,6 +883,11 @@ h2{font-size:28px;line-height:36px}
     lb.addEventListener('click', function (e) { if (e.target === lb || e.target.className === 'lb-x') { lb.close(); } });
   }
 })();
+</script>
+<script src="vnc-track.js"></script>
+<script>
+/* Giữ nguồn quảng cáo (UTM) để trang thanh toán gửi kèm đơn. */
+(function () { try { var q = new URLSearchParams(location.search); if (q.get('utm_source')) { sessionStorage.setItem('mr_utm', JSON.stringify({ source: q.get('utm_source'), campaign: q.get('utm_campaign') || '', ad: q.get('utm_content') || '' })); } } catch (x) {} })();
 </script>
 </body>
 </html>

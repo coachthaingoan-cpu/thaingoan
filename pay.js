@@ -54,10 +54,49 @@
       '<div id="mrp-a">' + form + '</div><div id="mrp-b"' + (need ? ' hidden' : '') + '></div></div>';
     document.body.appendChild(dlg);
     dlg.querySelector('.mrp-x').onclick = function () { dlg.close(); };
+    var poll = 0;
+    dlg.addEventListener('close', function () { clearTimeout(poll); poll = -1; });
+    function utm() {
+      var q = new URLSearchParams(location.search), out = {};
+      try { out = JSON.parse(sessionStorage.getItem('mr_utm') || '{}') || {}; } catch (x) {}
+      if (q.get('utm_source')) { out.source = q.get('utm_source'); out.campaign = q.get('utm_campaign') || ''; out.ad = q.get('utm_content') || ''; }
+      return out;
+    }
+    /* Tạo đơn có mã riêng ở máy chủ. Máy chủ lỗi thì dùng mã cũ (tiền tố + số Zalo) để khách vẫn chuyển được. */
     function showQR() {
       var b2 = buyer();
-      var code = (o.prefix + ' ' + clean(b2.zalo || '')).trim();
-      var qr = 'https://img.vietqr.io/image/' + BANK.code + '-' + BANK.acc + '-compact2.png?amount=' + o.amount +
+      var box0 = dlg.querySelector('#mrp-b');
+      box0.innerHTML = '<p class="mrp-sub">Đang tạo mã chuyển khoản…</p>'; box0.hidden = false; dlg.querySelector('#mrp-a').hidden = true;
+      if (!o.kind || !window.fetch) { render((o.prefix + ' ' + clean(b2.zalo || '')).trim(), false); return; }
+      var u = utm();
+      var ctrl = window.AbortController ? new AbortController() : null;
+      var t = setTimeout(function () { if (ctrl) { ctrl.abort(); } }, 8000);
+      fetch('/api/order', { method: 'POST', headers: { 'Content-Type': 'application/json' }, signal: ctrl ? ctrl.signal : undefined,
+        body: JSON.stringify({ kind: o.kind, bump: !!o.bump, fullname: b2.fullname || '', zalo: b2.zalo || '', email: b2.email || '', source: u.source || '', campaign: u.campaign || '', ad: u.ad || '' }) })
+        .then(function (r) { return r.json(); })
+        .then(function (d) { clearTimeout(t); if (d && d.ok && d.code) { o.amount = d.amount || o.amount; render(d.code, true); } else { render((o.prefix + ' ' + clean(b2.zalo || '')).trim(), false); } })
+        .catch(function () { clearTimeout(t); render((o.prefix + ' ' + clean(b2.zalo || '')).trim(), false); });
+    }
+    var me = dlg;
+    function watch(code) {
+      if (poll === -1 || !document.body.contains(me)) { return; }
+      poll = setTimeout(function () {
+        fetch('/api/order-status?code=' + encodeURIComponent(code), { cache: 'no-store' })
+          .then(function (r) { return r.json(); })
+          .then(function (d) { if (!document.body.contains(me)) { return; } if (d && d.paid) { paid(code); } else { watch(code); } })
+          .catch(function () { watch(code); });
+      }, 4000);
+    }
+    function paid(code) {
+      var box = me.querySelector('#mrp-b');
+      box.innerHTML = '<h3>Đã nhận ' + vnd(o.amount) + '</h3><p class="mrp-sub">Cảm ơn chị. Đơn ' + esc(code) + ' đã xác nhận, đang chuyển trang…</p>';
+      try { sessionStorage.setItem('mr_paid_' + code, '1'); } catch (x) {}
+      if (o.onDone) { o.onDone(); }
+      setTimeout(function () { window.location.href = o.next; }, 1200);
+    }
+    function render(code, live) {
+      var b2 = buyer();
+      var qr ='https://img.vietqr.io/image/' + BANK.code + '-' + BANK.acc + '-compact2.png?amount=' + o.amount +
         '&addInfo=' + encodeURIComponent(code) + '&accountName=' + encodeURIComponent(BANK.name);
       var box = dlg.querySelector('#mrp-b');
       box.innerHTML = '<p class="mrp-sub">Mở app ngân hàng, quét mã. Số tiền và nội dung đã điền sẵn.</p>' +
@@ -68,7 +107,8 @@
         '<div class="mrp-row"><span>Chủ tài khoản</span><b>' + BANK.name + '</b></div>' +
         '<div class="mrp-row"><span>Số tiền</span><b>' + vnd(o.amount) + '<button class="mrp-cp" type="button" data-c="' + o.amount + '">Chép</button></b></div>' +
         '<div class="mrp-row"><span>Nội dung</span><b>' + esc(code) + '<button class="mrp-cp" type="button" data-c="' + esc(code) + '">Chép</button></b></div>' +
-        '</div><p class="mrp-note">Chuyển xong, chị bấm nút dưới. Link Zoom gửi qua email và Zalo trong 24 giờ. Cần hỗ trợ, chị nhắn Zalo ' +
+        '</div><p class="mrp-note">' + (live ? '<b>Chị giữ nguyên nội dung chuyển khoản</b> để hệ thống tự xác nhận. Tiền về, trang này tự chuyển tiếp. ' : '') +
+        'Chuyển xong, chị bấm nút dưới. Link Zoom gửi qua email và Zalo trong 24 giờ. Cần hỗ trợ, chị nhắn Zalo ' +
         '<a href="https://zalo.me/' + ZALO + '" target="_blank" rel="noopener">0914 309 986</a>.</p>' +
         '<button class="mrp-btn" type="button" id="mrp-done">Tôi đã chuyển khoản</button>';
       box.hidden = false; dlg.querySelector('#mrp-a').hidden = true;
@@ -78,6 +118,7 @@
         if (o.onDone) { o.onDone(); }
         setTimeout(function () { window.location.href = o.next; }, 300);
       };
+      if (live) { watch(code); }
     }
     if (need) {
       dlg.querySelector('#mrp-go').onclick = function () {

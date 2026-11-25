@@ -454,7 +454,7 @@ h2{font-size:28px;line-height:36px}
     b.addEventListener('click', function () {
       try { var s = buyer || {}; s.bump = check.checked; sessionStorage.setItem('mr_buyer', JSON.stringify(s)); } catch (x) {}
       track('InitiateCheckout', { value: total(), currency: 'VND', content_name: 'Money Root Workshop' });
-      if (window.MRPay) { MRPay.open({ amount: total(), prefix: 'MR', goi: check.checked ? 'Workshop + Money Date Kit' : 'Workshop', next: CONFIG.previewNext }); return; }
+      if (window.MRPay) { MRPay.open({ kind: 'ws', bump: check.checked, amount: total(), prefix: 'MR', goi: check.checked ? 'Workshop + Money Date Kit' : 'Workshop', next: CONFIG.previewNext }); return; }
       var link = check.checked ? CONFIG.payLinkBump : CONFIG.payLink;
       window.location.href = isPh(link) ? CONFIG.previewNext : link;
     });

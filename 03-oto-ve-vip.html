@@ -397,7 +397,7 @@ h2{font-size:28px;line-height:36px}
   document.getElementById('accept').addEventListener('click', function () {
     if (Date.now() > deadline) { close(); return; }
     track('InitiateCheckout', { value: 200000, currency: 'VND', content_name: 'Nâng cấp vé VIP' });
-    if (window.MRPay) { MRPay.open({ amount: 200000, prefix: 'VIP', goi: 'Nang cap VIP', next: CONFIG.previewNext }); return; }
+    if (window.MRPay) { MRPay.open({ kind: 'vip', amount: 200000, prefix: 'VIP', goi: 'Nang cap VIP', next: CONFIG.previewNext }); return; }
     window.location.href = isPh(CONFIG.vipLink) ? CONFIG.previewNext : CONFIG.vipLink;
   });
 })();
