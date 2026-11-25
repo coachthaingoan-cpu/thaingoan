@@ -19,5 +19,5 @@ module.exports = async (req, res) => {
   const type = String(b.type || "").toLowerCase() === "booking" ? "booking" : "lead";
   const r = await vnc.emit(Object.assign({}, b, { type }));
   if (typeof r.db === "string" && r.db.indexOf("bỏ qua") === 0) return res.status(400).json({ ok: false, error: "Cần số Zalo 10 số hoặc email đúng." });
-  return res.status(200).json({ ok: true });
+  return res.status(200).json({ ok: true, email: r.email });
 };

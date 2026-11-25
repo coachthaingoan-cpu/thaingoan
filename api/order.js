@@ -49,5 +49,5 @@ module.exports = async (req, res) => {
     utm_content: b.ad,
   });
   // Lưu đơn lỗi vẫn trả mã để khách chuyển khoản được; Thái Ngoan đối chiếu tay trên SePay.
-  return res.status(200).json({ ok: true, code, amount, saved: r.db === "ok" });
+  return res.status(200).json({ ok: true, code, amount, saved: r.db === "ok", email: r.email });
 };
