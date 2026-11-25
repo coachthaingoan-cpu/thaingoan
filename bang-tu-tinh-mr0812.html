@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Bảng tự tính phiếu Money Root | Thái Ngoan</title>
+<style>
+:root{--g:#2E8B5E;--gd:#1f6a46;--ink:#1c1c1a;--mut:#5d625e;--line:#d6ddd8;--soft:#eef5f0;--bg:#fbfbf8}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,"Noto Sans",sans-serif;color:var(--ink);background:var(--bg);font-size:17px;line-height:1.5}
+.wrap{max-width:720px;margin:0 auto;padding:20px 16px 60px}
+header{border-bottom:3px solid var(--g);padding-bottom:10px;margin-bottom:16px}
+h1{font-size:26px;margin:0 0 4px;letter-spacing:-.3px}
+h1 span{color:var(--g)}
+.sub{color:var(--mut);margin:0;font-size:15px}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;margin:0 0 14px}
+h2{font-size:19px;margin:0 0 4px;display:flex;gap:10px;align-items:center}
+h2 .n{background:var(--g);color:#fff;border-radius:50%;width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;font-size:15px;flex:none}
+.hint{color:var(--mut);font-size:14.5px;margin:0 0 10px}
+.row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 0;border-top:1px solid #eef0ee}
+.row:first-of-type{border-top:none}
+.row label{flex:1}
+.row small{display:block;color:var(--mut);font-size:13.5px}
+input[type=number]{width:120px;font-size:18px;padding:8px 10px;border:1.5px solid var(--line);border-radius:8px;text-align:right;font-family:inherit}
+input[type=number]:focus{outline:none;border-color:var(--g)}
+.out{width:120px;text-align:right;font-weight:700;font-size:18px}
+.neg{color:#b3261e}
+.sum{font-weight:700}
+.warn{background:#fff4e5;border-radius:8px;padding:8px 10px;font-size:14.5px;margin-top:8px;display:none}
+.big{font-size:30px;font-weight:800;color:var(--gd);margin:4px 0}
+.yn{display:flex;gap:6px}
+.yn button{border:1.5px solid var(--line);background:#fff;border-radius:8px;padding:7px 14px;font-size:16px;font-family:inherit;cursor:pointer}
+.yn button.on{background:var(--g);border-color:var(--g);color:#fff}
+.res{border-radius:12px;padding:16px;background:var(--soft);border:2px solid var(--g)}
+.res .type{font-size:28px;font-weight:800;margin:0}
+.res .act{font-size:17px;margin:6px 0 0}
+.bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
+select,.btn{font-size:16px;padding:8px 12px;border-radius:8px;border:1.5px solid var(--line);background:#fff;font-family:inherit}
+.btn{cursor:pointer}
+.btn.pri{background:var(--g);color:#fff;border-color:var(--g)}
+.foot{font-size:13px;color:var(--mut);margin-top:20px;border-top:1px solid var(--line);padding-top:10px}
+.saved{color:var(--g);font-size:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Bảng tự tính <span>Money Root</span></h1>
+  <p class="sub">Quyền lợi vé VIP · Money Root Workshop 08/12/2026 · Thái Ngoan</p>
+</header>
+
+<div class="bar">
+  <label for="m">Tháng:</label>
+  <select id="m"></select>
+  <button class="btn" type="button" id="clear">Xoá số tháng này</button>
+  <span class="saved" id="saved"></span>
+</div>
+<p class="hint">Nhập số tròn, đơn vị <b>triệu đồng</b>. Số chỉ lưu trên máy của chị, không gửi đi đâu. Tháng sau chọn tháng mới và nhập lại để so.</p>
+
+<section class="card">
+  <h2><span class="n">1</span>Số tiền về tay</h2>
+  <p class="hint">Tiền về tay chị trong tháng, gồm lương chủ và lợi nhuận rút ra.</p>
+  <div class="row"><label for="T">T, tiền về tay</label><input id="T" type="number" inputmode="decimal" min="0" step="0.5"></div>
+</section>
+
+<section class="card">
+  <h2><span class="n">2</span>Cách A: tháng vừa rồi tiền đã đi đâu</h2>
+  <div class="row"><label for="a1">Chi gia đình thiết yếu</label><input id="a1" type="number" inputmode="decimal" min="0" step="0.5"></div>
+  <div class="row"><label for="a2">Chi tận hưởng cuộc sống</label><input id="a2" type="number" inputmode="decimal" min="0" step="0.5"></div>
+  <div class="row"><label for="a3">Chi theo phản ứng, cho vay, mua theo tin</label><input id="a3" type="number" inputmode="decimal" min="0" step="0.5"></div>
+  <div class="row"><label for="a4">Đổ lại vào hàng, không kế hoạch</label><input id="a4" type="number" inputmode="decimal" min="0" step="0.5"></div>
+  <div class="row"><label for="a5">Không rõ đi đâu<small>Để trống, bảng tự tính phần chênh còn lại</small></label><input id="a5" type="number" inputmode="decimal" min="0" step="0.5"></div>
+  <div class="row"><label for="A"><b>Vào tài sản có chủ đích (A)</b></label><input id="A" type="number" inputmode="decimal" min="0" step="0.5"></div>
+  <div class="row sum"><span>Tổng</span><span class="out" id="sumA">0</span></div>
+  <div class="warn" id="wA"></div>
+</section>
+
+<section class="card">
+  <h2><span class="n">3</span>Cách B: chia lại T theo thứ tự trả</h2>
+  <p class="hint">Bảng chia từ trên xuống. Chị chỉ cần nhập mức chi gia đình thiết yếu cố định.</p>
+  <div class="row"><label>1 · Vào tài sản (B)<small>20% × T</small></label><span class="out" id="b1">0</span></div>
+  <div class="row"><label>2 · Dự phòng, tái đầu tư có quy tắc<small>10% × T</small></label><span class="out" id="b2">0</span></div>
+  <div class="row"><label>3 · Quỹ tự do của chị<small>10% × T</small></label><span class="out" id="b3">0</span></div>
+  <div class="row"><label for="b4">4 · Chi gia đình thiết yếu<small>Mức cố định chị chọn</small></label><input id="b4" type="number" inputmode="decimal" min="0" step="0.5"></div>
+  <div class="row"><label>5 · Chi tận hưởng cuộc sống<small>Phần còn lại</small></label><span class="out" id="b5">0</span></div>
+  <div class="warn" id="wB">Dòng 5 đang âm hoặc quá thấp. Chị cứ giữ nguyên, đây là con số để làm ở giai đoạn Decide, không phải thất bại.</div>
+</section>
+
+<section class="card">
+  <h2><span class="n">4</span>Chênh lệch mỗi năm</h2>
+  <p class="hint">(B − A) × 12, số tiền chuyển vào tài sản thêm mỗi năm. Chưa tính lãi hay lợi suất.</p>
+  <p class="big" id="diff">0 triệu / năm</p>
+</section>
+
+<section class="card">
+  <h2><span class="n">5</span>Năm câu Có / Không</h2>
+  <div id="qs"></div>
+</section>
+
+<section class="res" id="res">
+  <p class="hint" style="margin:0">Kiểu quyết tiền của nhà chị</p>
+  <p class="type" id="type">Nhập số để xem</p>
+  <p class="act" id="act"></p>
+</section>
+
+<p class="foot">20% là tỷ lệ chuyển vào tài sản mỗi tháng, không phải lợi suất. Nội dung mang tính giáo dục, không phải khuyến nghị đầu tư. Kết quả phụ thuộc lợi nhuận kinh doanh và kỷ luật của từng gia đình. Cần hỗ trợ: Zalo 0914 309 986.</p>
+</div>
+
+<script>
+(function () {
+  var Q = [
+    'Tiền kinh doanh và tiền nhà nằm ở hai tài khoản riêng?',
+    'Chị có lương chủ cố định mỗi tháng?',
+    'Khoản vào tài sản được chuyển ngay khi tiền về, trước khi chi?',
+    'Khoản lớn gần nhất trên 50 triệu được quyết theo quy tắc, có bàn với chồng?',
+    'Chi theo phản ứng cộng không rõ đi đâu dưới 10% của T? (bảng tự điền theo bước 2)'
+  ];
+  var ids = ['T', 'a1', 'a2', 'a3', 'a4', 'a5', 'A', 'b4'];
+  var el = function (id) { return document.getElementById(id); };
+  var yn = [null, null, null, null, null];
+  var a5auto = true;
+
+  var qs = el('qs');
+  Q.forEach(function (q, i) {
+    var r = document.createElement('div'); r.className = 'row';
+    r.innerHTML = '<label>' + (i + 1) + '. ' + q + '</label><span class="yn"><button type="button" data-i="' + i + '" data-v="1">Có</button><button type="button" data-i="' + i + '" data-v="0">Không</button></span>';
+    qs.appendChild(r);
+  });
+  qs.addEventListener('click', function (e) {
+    var b = e.target.closest('button'); if (!b) { return; }
+    var i = +b.getAttribute('data-i'); if (i === 4) { return; }
+    yn[i] = b.getAttribute('data-v') === '1'; calc(true);
+  });
+
+  var sel = el('m'), now = new Date();
+  for (var k = 0; k < 13; k += 1) {
+    var d = new Date(now.getFullYear(), now.getMonth() - k, 1);
+    var o = document.createElement('option');
+    o.value = d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2);
+    o.textContent = 'Tháng ' + (d.getMonth() + 1) + '/' + d.getFullYear();
+    sel.appendChild(o);
+  }
+  sel.selectedIndex = 1;
+
+  function n(id) { var v = parseFloat(String(el(id).value).replace(',', '.')); return isFinite(v) ? v : 0; }
+  function f(x) { return (Math.round(x * 10) / 10).toLocaleString('vi-VN'); }
+  function key() { return 'mr_bang_' + sel.value; }
+  function save() {
+    try {
+      var d = { yn: yn, a5auto: a5auto }; ids.forEach(function (id) { d[id] = el(id).value; });
+      localStorage.setItem(key(), JSON.stringify(d)); el('saved').textContent = 'Đã lưu trên máy';
+    } catch (x) {}
+  }
+  function load() {
+    var d = null; try { d = JSON.parse(localStorage.getItem(key()) || 'null'); } catch (x) {}
+    ids.forEach(function (id) { el(id).value = d && d[id] != null ? d[id] : ''; });
+    yn = d && d.yn ? d.yn : [null, null, null, null, null];
+    a5auto = d ? d.a5auto !== false : true;
+    el('saved').textContent = '';
+    calc(false);
+  }
+
+  function calc(store) {
+    var T = n('T');
+    if (a5auto) {
+      var rest = T - n('a1') - n('a2') - n('a3') - n('a4') - n('A');
+      el('a5').value = T > 0 && rest > 0 ? Math.round(rest * 10) / 10 : (T > 0 ? 0 : '');
+    }
+    var A = n('A'), sumA = n('a1') + n('a2') + n('a3') + n('a4') + n('a5') + A;
+    el('sumA').textContent = f(sumA);
+    var wA = el('wA');
+    if (T > 0 && sumA - T > 0.05) { wA.style.display = 'block'; wA.textContent = 'Tổng đang lớn hơn T ' + f(sumA - T) + ' triệu. Chị xem lại một khoản nhé.'; } else { wA.style.display = 'none'; }
+
+    var B = T * 0.2, b2 = T * 0.1, b3 = T * 0.1, b5 = T - B - b2 - b3 - n('b4');
+    el('b1').textContent = f(B); el('b2').textContent = f(b2); el('b3').textContent = f(b3);
+    el('b5').textContent = f(b5); el('b5').classList.toggle('neg', b5 < 0);
+    el('wB').style.display = T > 0 && el('b4').value !== '' && b5 < T * 0.05 ? 'block' : 'none';
+
+    var diff = (B - A) * 12;
+    el('diff').textContent = (T > 0 ? f(diff) : '0') + ' triệu / năm';
+
+    yn[4] = T > 0 ? (n('a3') + n('a5')) < T * 0.1 : null;
+    Array.prototype.forEach.call(qs.querySelectorAll('button'), function (b) {
+      var i = +b.getAttribute('data-i'), v = b.getAttribute('data-v') === '1';
+      b.classList.toggle('on', yn[i] !== null && yn[i] === v);
+    });
+
+    var answered = yn.every(function (x) { return x !== null; });
+    var yes = yn.filter(function (x) { return x === true; }).length;
+    var type = '', act = '';
+    if (!(T > 0) || !answered) { type = 'Nhập số và trả lời đủ 5 câu'; }
+    else if (A < T * 0.1 && yes <= 2) { type = 'Reactive'; act = 'Việc tuần này: chọn con số trả mình trước cho tháng 12, viết ra giấy.'; }
+    else if (A >= T * 0.2 && yes === 5) { type = 'Rooted'; act = 'Việc tuần này: liệt kê tài sản đang nằm ở đâu, theo tỷ lệ bao nhiêu.'; }
+    else { type = 'Tangled'; act = 'Việc tuần này: mở tài khoản thứ hai, đặt tên "Tiền nhà".'; }
+    el('type').textContent = type; el('act').textContent = act;
+    if (store) { save(); }
+  }
+
+  ids.forEach(function (id) {
+    el(id).addEventListener('input', function () { if (id === 'a5') { a5auto = el('a5').value === ''; } calc(true); });
+  });
+  sel.addEventListener('change', load);
+  el('clear').addEventListener('click', function () {
+    try { localStorage.removeItem(key()); } catch (x) {}
+    load();
+  });
+  load();
+})();
+</script>
+</body>
+</html>

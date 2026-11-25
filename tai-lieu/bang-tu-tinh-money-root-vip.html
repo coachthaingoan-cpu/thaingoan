@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Bảng tự tính phiếu Money Root · Vé VIP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap">
+<style>
+:root { --ink: #1c1c1a; --mute: #5c5c55; --line: #dcdbd4; --green: #2E8B5E; --green-bg: #eef6f1; --warm: #f5f4ef; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: "Montserrat", system-ui, sans-serif; color: var(--ink); background: #fff; line-height: 1.5; font-size: 16px; }
+main { max-width: 680px; margin: 0 auto; padding: 28px 20px 48px; }
+.kicker { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--green); font-weight: 700; margin: 0; }
+h1 { font-size: 28px; line-height: 1.2; margin: 6px 0 10px; font-weight: 800; }
+.lead { color: var(--mute); margin: 0 0 8px; }
+.step { border-top: 2px solid var(--green); padding-top: 16px; margin-top: 28px; }
+.step h2 { font-size: 19px; margin: 0 0 4px; display: flex; gap: 10px; align-items: baseline; }
+.n { font-size: 11px; letter-spacing: .1em; background: var(--green); color: #fff; padding: 3px 8px; border-radius: 4px; white-space: nowrap; }
+.hint { color: var(--mute); font-size: 14px; margin: 4px 0 0; }
+.row { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--line); }
+.row label { flex: 1; }
+.row.hl { background: var(--green-bg); margin: 0 -10px; padding: 10px; border-radius: 6px; border-bottom: none; }
+.k { color: var(--green); font-weight: 800; margin-right: 6px; }
+.num { display: flex; align-items: center; gap: 6px; }
+input[type=number], input[type=text] { width: 110px; font: inherit; font-weight: 700; padding: 8px 10px; border: 1px solid #b9b8b0; border-radius: 6px; text-align: right; }
+input:focus { outline: 2px solid var(--green); border-color: var(--green); }
+.unit { color: var(--mute); font-size: 14px; width: 40px; }
+.out { font-weight: 800; }
+.big { font-size: 34px; font-weight: 800; color: var(--green); margin: 6px 0 0; }
+.warn { color: #9a4a12; font-size: 14px; }
+.cards { display: grid; gap: 10px; margin-top: 10px; }
+.card { border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; }
+.card.on { border-color: var(--green); background: var(--green-bg); }
+.card b { font-size: 17px; }
+.check { display: flex; gap: 10px; align-items: flex-start; margin-top: 12px; font-size: 15px; }
+.check input { width: 20px; height: 20px; margin-top: 2px; accent-color: var(--green); }
+.note { background: var(--warm); border-radius: 8px; padding: 12px 14px; font-size: 14px; margin-top: 12px; }
+.compare { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
+.compare div { background: var(--warm); border-radius: 8px; padding: 12px; }
+.compare .v { font-size: 22px; font-weight: 800; }
+.compare .v.g { color: var(--green); }
+.btns { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+button { font: inherit; font-weight: 700; padding: 12px 18px; border-radius: 8px; border: 1px solid var(--ink); background: #fff; cursor: pointer; }
+button.primary { background: var(--green); border-color: var(--green); color: #fff; }
+.saved { color: var(--green); font-size: 14px; min-height: 20px; margin-top: 8px; }
+.quote { text-align: center; font-weight: 700; color: var(--green); margin-top: 32px; }
+footer { font-size: 12px; color: var(--mute); border-top: 1px solid var(--line); margin-top: 28px; padding-top: 12px; }
+@media print { .btns, .saved { display: none; } body { font-size: 13px; } .step { margin-top: 16px; } }
+</style>
+</head>
+<body>
+<main>
+<p class="kicker">Vé VIP · Money Root Workshop 08/12</p>
+<h1>Bảng tự tính phiếu Money Root</h1>
+<p class="lead">Chị nhập số tròn theo triệu, bảng tự cộng, tự nhân và gợi ý kiểu quyết tiền của nhà chị. Số chị nhập chỉ nằm trên máy này, không gửi đi đâu. Tháng sau chị mở lại và nhập số tháng mới.</p>
+
+<section class="step">
+  <h2><span class="n">BƯỚC 1</span> Tiền về tay chị trong tháng</h2>
+  <p class="hint">Gồm khoản chị trả cho mình và lợi nhuận rút ra. Không chắc thì ước.</p>
+  <div class="row"><label for="thang">Tháng</label><div class="num"><input id="thang" type="text" inputmode="numeric" placeholder="11/2026"><span class="unit"></span></div></div>
+  <div class="row"><label for="ve">Tiền về tay</label><div class="num"><input id="ve" type="number" min="0" step="0.5" inputmode="decimal" placeholder="80"><span class="unit">triệu</span></div></div>
+</section>
+
+<section class="step">
+  <h2><span class="n">BƯỚC 2</span> Chia vào 5 ngăn</h2>
+  <div class="row"><label for="n1"><span class="k">1</span>Chi gia đình: ăn uống, điện nước, sinh hoạt</label><div class="num"><input id="n1" type="number" min="0" step="0.5" inputmode="decimal"><span class="unit">triệu</span></div></div>
+  <div class="row"><label for="n2"><span class="k">2</span>Con và bố mẹ hai bên</label><div class="num"><input id="n2" type="number" min="0" step="0.5" inputmode="decimal"><span class="unit">triệu</span></div></div>
+  <div class="row"><label for="n3"><span class="k">3</span>Chi theo phản ứng, cho vay vì nể</label><div class="num"><input id="n3" type="number" min="0" step="0.5" inputmode="decimal"><span class="unit">triệu</span></div></div>
+  <div class="row"><label for="n4"><span class="k">4</span>Đổ lại vào việc kinh doanh, không có kế hoạch trước</label><div class="num"><input id="n4" type="number" min="0" step="0.5" inputmode="decimal"><span class="unit">triệu</span></div></div>
+  <div class="row hl"><label for="n5"><span class="k">5</span><b>Vào tài sản ngay khi tiền về, trước khi chi</b></label><div class="num"><input id="n5" type="number" min="0" step="0.5" inputmode="decimal"><span class="unit">triệu</span></div></div>
+  <div class="row"><span>Không rõ đi đâu (tiền về trừ tổng 5 ngăn)</span><span class="out" id="khongro">0 triệu</span></div>
+  <p class="warn" id="vuot" hidden>Tổng 5 ngăn đang lớn hơn tiền về tay. Chị xem lại một ngăn nhé.</p>
+</section>
+
+<section class="step">
+  <h2><span class="n">BƯỚC 3</span> Ngăn 5 nhân 12</h2>
+  <p class="hint">Số vào tài sản mỗi năm của nhà chị, nếu tháng nào cũng như tháng này.</p>
+  <p class="big" id="nam">0 triệu / năm</p>
+  <p class="hint">Bài 80 triệu trong buổi: quyết theo phản ứng 48 triệu một năm, theo Money Root System 192 triệu. Minh họa, chưa tính lợi suất.</p>
+</section>
+
+<section class="step">
+  <h2><span class="n">BƯỚC 4</span> Một quyết định cho tháng tới</h2>
+  <div class="row"><label for="ngay">Ngày chị đặt lệnh chuyển</label><div class="num"><input id="ngay" type="text" placeholder="05/12"><span class="unit"></span></div></div>
+  <div class="row"><label for="tyle">Tỷ lệ đầu tiên</label><div class="num"><input id="tyle" type="number" min="0" max="100" step="1" inputmode="numeric" placeholder="10"><span class="unit">%</span></div></div>
+  <div class="row hl"><span><b>Con số trả mình trước mỗi tháng</b></span><span class="out" id="tramt">0 triệu</span></div>
+  <div class="compare">
+    <div>Đang vào tài sản<br><span class="v" id="cmpNow">0</span><br><span class="hint">triệu mỗi năm</span></div>
+    <div>Theo quyết định mới<br><span class="v g" id="cmpNew">0</span><br><span class="hint">triệu mỗi năm, chênh <b id="cmpDiff">0</b></span></div>
+  </div>
+  <p class="note">20% là <b>tỷ lệ chuyển vào tài sản</b>, không phải lợi suất. Bắt đầu nhỏ cũng được: tỷ lệ chị giữ được đều mỗi tháng quan trọng hơn tỷ lệ cao.</p>
+</section>
+
+<section class="step">
+  <h2><span class="n">BƯỚC 5</span> Chị đang quyết tiền theo kiểu nào?</h2>
+  <label class="check"><input type="checkbox" id="truoc"> Ngăn 5 được chuyển ngay khi tiền về, có lệnh hoặc quy tắc sẵn (không phải phần "còn lại" cuối tháng)</label>
+  <label class="check"><input type="checkbox" id="chung"> Tiền kinh doanh và tiền nhà đang chung một tài khoản</label>
+  <div class="cards">
+    <div class="card" id="kR"><b>Reactive</b> · quyết theo phản ứng: ngăn 3 lớn.</div>
+    <div class="card" id="kT"><b>Tangled</b> · tiền còn lẫn: ngăn 4 lớn, chung một tài khoản.</div>
+    <div class="card" id="kRo"><b>Rooted</b> · đã có quy tắc: ngăn 5 được trả trước.</div>
+  </div>
+  <p class="hint">Bảng chỉ gợi ý từ số chị nhập. Chị tự chọn kiểu đúng với nhà mình, và trong buổi chỉ gõ R, T hoặc Rooted vào chat.</p>
+</section>
+
+<p class="quote">Con số này là thông tin, không phải khuyết điểm. Thứ tự thì đổi được.</p>
+
+<div class="btns">
+  <button class="primary" type="button" id="luu">Lưu trên máy này</button>
+  <button type="button" id="in">In hoặc lưu PDF</button>
+  <button type="button" id="xoa">Xoá để nhập tháng mới</button>
+</div>
+<p class="saved" id="msg"></p>
+
+<footer>Thái Ngoan · Money Root System. Nội dung mang tính giáo dục, không phải khuyến nghị đầu tư. Kết quả phụ thuộc lợi nhuận kinh doanh và kỷ luật của từng gia đình.</footer>
+</main>
+<script>
+(function () {
+  var KEY = 'mr_bang_tu_tinh_v1';
+  var ids = ['thang', 've', 'n1', 'n2', 'n3', 'n4', 'n5', 'ngay', 'tyle'];
+  var checks = ['truoc', 'chung'];
+  function $(id) { return document.getElementById(id); }
+  function num(id) { var v = parseFloat(String($(id).value).replace(',', '.')); return isFinite(v) && v > 0 ? v : 0; }
+  function fmt(n) { return (Math.round(n * 10) / 10).toLocaleString('vi-VN'); }
+  function calc() {
+    var ve = num('ve'), n = [num('n1'), num('n2'), num('n3'), num('n4'), num('n5')];
+    var tong = n.reduce(function (a, b) { return a + b; }, 0);
+    var khongro = ve - tong;
+    $('khongro').textContent = fmt(Math.max(khongro, 0)) + ' triệu';
+    $('vuot').hidden = !(ve > 0 && khongro < -0.01);
+    $('nam').textContent = fmt(n[4] * 12) + ' triệu / năm';
+    var tyle = Math.min(num('tyle'), 100);
+    var tramt = ve * tyle / 100;
+    $('tramt').textContent = fmt(tramt) + ' triệu';
+    $('cmpNow').textContent = fmt(n[4] * 12);
+    $('cmpNew').textContent = fmt(Math.max(tramt, n[4]) * 12);
+    $('cmpDiff').textContent = fmt(Math.max(tramt - n[4], 0) * 12) + ' triệu';
+    var kieu = '';
+    if ($('truoc').checked && n[4] > 0) { kieu = 'kRo'; }
+    else if (n[2] + n[3] > 0 || $('chung').checked) { kieu = (n[3] > n[2] || ($('chung').checked && n[3] >= n[2])) ? 'kT' : 'kR'; }
+    ['kR', 'kT', 'kRo'].forEach(function (k) { $(k).classList.toggle('on', k === kieu); });
+  }
+  function save() {
+    var d = {};
+    ids.forEach(function (id) { d[id] = $(id).value; });
+    checks.forEach(function (id) { d[id] = $(id).checked; });
+    try { localStorage.setItem(KEY, JSON.stringify(d)); $('msg').textContent = 'Đã lưu trên máy này. Lần sau mở lại link, số vẫn còn.'; }
+    catch (e) { $('msg').textContent = 'Trình duyệt này không cho lưu. Chị bấm "In hoặc lưu PDF" để giữ lại nhé.'; }
+  }
+  function load() {
+    try {
+      var d = JSON.parse(localStorage.getItem(KEY) || 'null');
+      if (!d) { return; }
+      ids.forEach(function (id) { if (d[id] != null) { $(id).value = d[id]; } });
+      checks.forEach(function (id) { $(id).checked = !!d[id]; });
+    } catch (e) {}
+  }
+  ids.concat(checks).forEach(function (id) { $(id).addEventListener('input', calc); $(id).addEventListener('change', calc); });
+  $('luu').addEventListener('click', save);
+  $('in').addEventListener('click', function () { window.print(); });
+  $('xoa').addEventListener('click', function () {
+    ids.forEach(function (id) { $(id).value = ''; });
+    checks.forEach(function (id) { $(id).checked = false; });
+    try { localStorage.removeItem(KEY); } catch (e) {}
+    $('msg').textContent = 'Đã xoá. Chị nhập số tháng mới.';
+    calc();
+  });
+  load(); calc();
+})();
+</script>
+</body>
+</html>
