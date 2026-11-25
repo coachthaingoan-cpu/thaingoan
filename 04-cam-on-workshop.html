@@ -352,7 +352,7 @@ h2{font-size:28px;line-height:36px}
   function isPh(v) { return !v || v.charAt(0) === '['; }
   function track(e, d) { try { if (typeof fbq === 'function') { fbq('track', e, d || {}); } } catch (x) {} }
   var q = window.location.search;
-  if (/[?&]vip=1\b/.test(q)) { document.body.classList.add('is-vip'); track('Purchase', { value: 200000, currency: 'VND', content_name: 'Nâng cấp vé VIP' }); }
+  if (/[?&]vip=1\b/.test(q)) { document.body.classList.add('is-vip'); }
   var kit = /[?&]kit=1\b/.test(q);
   try { var b = JSON.parse(sessionStorage.getItem('mr_buyer') || 'null'); if (b && b.bump) { kit = true; } } catch (x) {}
   if (kit) { document.body.classList.add('has-kit'); }

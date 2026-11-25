@@ -371,13 +371,7 @@ h2{font-size:28px;line-height:36px}
   function isPh(v) { return !v || v.charAt(0) === '['; }
   function track(e, d) { try { if (typeof fbq === 'function') { fbq('track', e, d || {}); } } catch (x) {} }
   function pad(n) { return n < 10 ? '0' + n : String(n); }
-  try {
-    if (!sessionStorage.getItem('mr_purchase_tracked')) {
-      var b = JSON.parse(sessionStorage.getItem('mr_buyer') || 'null');
-      track('Purchase', { value: b && b.bump ? 398000 : 299000, currency: 'VND', content_name: 'Money Root Workshop' });
-      sessionStorage.setItem('mr_purchase_tracked', '1');
-    }
-  } catch (x) {}
+  /* Purchase đã bắn ở trang thanh toán, đúng lúc SePay xác nhận tiền về. */
   var deadline = 0;
   try { deadline = parseInt(sessionStorage.getItem('mr_oto_deadline') || '0', 10); } catch (x) {}
   /* Hết hạn quá 20 phút thì coi là lượt mở mới (vd. mở lại file để xem), đếm lại 10 phút.

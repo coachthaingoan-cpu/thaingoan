@@ -91,6 +91,8 @@
       var box = me.querySelector('#mrp-b');
       box.innerHTML = '<h3>Đã nhận ' + vnd(o.amount) + '</h3><p class="mrp-sub">Cảm ơn chị. Đơn ' + esc(code) + ' đã xác nhận, đang chuyển trang…</p>';
       try { sessionStorage.setItem('mr_paid_' + code, '1'); } catch (x) {}
+      /* Purchase chỉ bắn khi tiền về thật (SePay xác nhận). eventID = mã đơn để Meta không đếm trùng. */
+      try { if (typeof fbq === 'function') { fbq('track', 'Purchase', { value: o.amount, currency: 'VND', content_name: o.goi || o.kind || '', order_id: code }, { eventID: code }); } } catch (x) {}
       if (o.onDone) { o.onDone(); }
       setTimeout(function () { window.location.href = o.next; }, 1200);
     }
@@ -115,8 +117,21 @@
       Array.prototype.forEach.call(box.querySelectorAll('.mrp-cp'), function (btn) { btn.onclick = function () { copy(btn.getAttribute('data-c'), btn); }; });
       box.querySelector('#mrp-done').onclick = function () {
         send({ source: 'don-hang', fullname: b2.fullname || '', zalo: b2.zalo || '', email: b2.email || '', goi: o.goi, so_tien: o.amount, noi_dung_ck: code, trang: location.pathname.replace('/', '') });
-        if (o.onDone) { o.onDone(); }
-        setTimeout(function () { window.location.href = o.next; }, 300);
+        if (!live) {
+          if (o.onDone) { o.onDone(); }
+          setTimeout(function () { window.location.href = o.next; }, 300);
+          return;
+        }
+        /* Có mã đơn: chờ ngân hàng báo tiền về, trang tự chuyển khi xác nhận. */
+        var w = me.querySelector('#mrp-b');
+        w.innerHTML = '<h3>Đang chờ ngân hàng xác nhận…</h3><p class="mrp-sub">Thường mất 10 đến 60 giây. Chị giữ trang này mở, tiền về là trang tự chuyển tiếp.</p>' +
+          '<p class="mrp-note">Mã đơn của chị: <b>' + esc(code) + '</b></p><div id="mrp-late" hidden><p class="mrp-note">Sau 2 phút vẫn chưa thấy? Chị nhắn Zalo <a href="https://zalo.me/' + ZALO + '" target="_blank" rel="noopener">0914 309 986</a> kèm mã đơn, mình kiểm tra ngay. Chỗ của chị vẫn được giữ.</p>' +
+          '<button class="mrp-btn" type="button" id="mrp-skip">Tiếp tục</button></div>';
+        setTimeout(function () {
+          var late = me.querySelector('#mrp-late'); if (!late) { return; }
+          late.hidden = false;
+          me.querySelector('#mrp-skip').onclick = function () { if (o.onDone) { o.onDone(); } window.location.href = o.next; };
+        }, 120000);
       };
       if (live) { watch(code); }
     }
