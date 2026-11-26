@@ -6,7 +6,7 @@ const crypto = require("crypto");
 const vnc = require("../lib/vnc-connect");
 
 const PRODUCTS = {
-  ws: { prefix: "MR", amount: 299000, name: "Money Root Workshop 08/12", tag: "WS" },
+  ws: { prefix: "MR", amount: 299000, name: "Money Root Workshop 10-11/12", tag: "WS" },
   vip: { prefix: "VIP", amount: 200000, name: "Nang cap VIP Money Root Workshop", tag: "VIP" },
 };
 const BUMP = { amount: 99000, name: "Money Date Kit", tag: "KIT" };

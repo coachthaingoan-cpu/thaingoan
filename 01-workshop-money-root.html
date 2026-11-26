@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Sau 90 phút: biết tiền nhà mình đang rò ở đâu | Thái Ngoan</title>
-<meta name="description" content="Dành cho nữ chủ kinh doanh có gia đình. Sau 90 phút, chị biết tiền nhà mình đang rò ở đâu, biết mình đang quyết tiền theo kiểu nào, và ra về với con số trả mình trước cho tháng 12. 20h00 Thứ Ba 08/12/2026.">
+<title>Vé VIP Money Root Workshop: buổi 10/12 và 11/12 | Thái Ngoan</title>
+<meta name="description" content="Vé VIP Money Root Workshop cho nữ chủ kinh doanh có gia đình: thêm buổi 2 làm cùng Thái Ngoan trên số của chính nhà mình, có hỏi đáp, bản ghi cả 2 buổi và phiếu Money Root 5 bước. 20h00 Thứ Năm 10/12 và Thứ Sáu 11/12/2026.">
 <meta name="theme-color" content="#0F2A33">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="vi_VN">
-<meta property="og:title" content="Sau 90 phút: biết tiền nhà mình đang rò ở đâu">
-<meta property="og:description" content="Buổi live cùng Thái Ngoan, 20h00 Thứ Ba 08/12/2026. Vé 299.000đ.">
-<meta property="og:image" content="[OG_IMAGE_URL]">
-<meta property="og:url" content="[URL_TRANG]">
+<meta property="og:title" content="Vé VIP: thêm buổi 2, làm cùng Thái Ngoan trên số của chính nhà mình">
+<meta property="og:description" content="Buổi 1 miễn phí 20h00 Thứ Năm 10/12. Vé VIP 299.000đ thêm buổi 2 lúc 20h00 Thứ Sáu 11/12/2026, bản ghi 2 buổi và phiếu Money Root 5 bước.">
+<meta property="og:image" content="https://moneyroot.binhantaichinh.com/img/og-thai-ngoan.jpg">
+<meta property="og:url" content="https://moneyroot.binhantaichinh.com/01-workshop-money-root.html">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -347,38 +347,133 @@ h2{font-size:28px;line-height:36px}
 .phase-lead{margin-top:44px}
 /* Góp ý 16/11: ca Thu Hiền có ảnh và phần bình luận */
 .case{margin-left:auto;margin-right:auto}
+/* 25/11: dòng xác nhận cho người vừa đăng ký buổi miễn phí */
+.freeok{display:none;gap:10px;align-items:flex-start;justify-content:center;background:#EEF6F0;color:#1F4D33;border-bottom:1.5px solid #2F8F5B;padding:12px 16px;font-size:14px;line-height:22px}
+.freeok svg{flex:0 0 20px;margin-top:1px}
+.freeok p{max-width:900px}
+.freeok b{color:#1F6B43}
+.freeok a{color:#1F6B43;font-weight:600;white-space:nowrap}
+.is-free .freeok{display:flex}
+/* 25/11: trang nâng vé VIP, không còn form */
+.freeok p+p{margin-top:2px}
+.fo-step b{color:#1F6B43}
+.vb-date{font-size:14.5px;line-height:22px;color:#3A4B50;font-weight:500}
+.noreg-only{display:none!important}
+.no-reg .noreg-only{display:block!important}
+.no-reg .reg-only{display:none!important}
+.decline{display:block;margin-top:14px;text-align:center;font-size:15px;line-height:22px;font-weight:500;color:#4A5C61;text-decoration:underline;text-underline-offset:3px}
+.decline:hover{color:#14262B}
+.bg-ink .tk-decline .decline{color:#D6DCD8}
+.bg-ink .tk-decline .decline:hover{color:#F7F2E8}
+.paths{display:grid;gap:16px;margin-top:28px}
+.path-c .p-tag{font-size:12.5px;line-height:18px;font-weight:700;letter-spacing:.04em;color:#7A5C24;margin-bottom:8px}
+.path-c h3{font-size:24px;line-height:31px;margin-bottom:8px}
+.path-c p+p{margin-top:0}
+.path-c p:last-child{color:#3A4B50;font-size:16px;line-height:26px}
+.path-c.vip{background:#0F2A33;border:1.5px solid #C9A96A}
+.path-c.vip h3{color:#F7F2E8}
+.path-c.vip .p-tag{color:#E3CB98}
+.path-c.vip p:last-child{color:#D6DCD8}
+.tk-cd{max-width:440px;margin:24px auto 0}
+.tickets{display:grid;gap:24px;margin-top:36px;align-items:start}
+.tk{position:relative;border-radius:14px;padding:24px 22px}
+.tk-free{border:1px solid rgba(201,169,106,.3);background:rgba(247,242,232,.03)}
+.tk.tk-vip{border:1.5px solid #C9A96A;background:#153B45;box-shadow:0 24px 60px rgba(0,0,0,.25)}
+.tk-rib{position:absolute;top:-13px;right:20px;background:#C9A96A;color:#0F2A33;font-size:12px;line-height:18px;font-weight:700;letter-spacing:.08em;border-radius:999px;padding:3px 14px}
+.tk-l{font-size:13px;line-height:20px;font-weight:700;color:#E3CB98;letter-spacing:.03em}
+.tk-p{font:600 44px/1.1 'Cormorant Garamond',Georgia,serif;color:#F7F2E8;margin-top:6px}
+.tk-s{font-size:13.5px;line-height:20px;color:#9FD3B4;margin-top:2px}
+.tk-list{list-style:none;margin-top:16px;display:grid;gap:10px}
+.tk-list li{position:relative;padding-left:30px;font-size:15px;line-height:23px;color:#E9E4D9}
+.tk-list li:before{position:absolute;left:0;top:1px;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;line-height:1}
+.tk-list .y:before{content:"✓";background:rgba(159,211,180,.18);color:#9FD3B4}
+.tk-list .n{color:#8A9C9A}
+.tk-list .n:before{content:"✕";background:rgba(247,242,232,.06);color:#8A9C9A}
+.tk-vip .row:first-of-type{padding-top:10px}
+.tk-trust{font-size:13.5px;line-height:21px;color:#B7C6C4;margin-top:10px;text-align:center}
+.tk-trust+.tk-trust{margin-top:2px}
+.tk-decline{text-align:center;margin-top:20px}
+@media(min-width:900px){.paths{grid-template-columns:1fr 1fr;max-width:980px;margin-left:auto;margin-right:auto}.tickets{grid-template-columns:5fr 7fr;gap:28px}}
+.tk-cd .cd-label{text-align:center}
+/* 25/11 lần 2: buổi 2 có gì */
+.b2grid{display:grid;gap:16px;margin-top:28px}
+.b2 .b2n{font:700 30px/1 'Cormorant Garamond',Georgia,serif;color:#C9A96A;margin-bottom:10px}
+.b2 h3{font-size:23px;line-height:30px;margin-bottom:8px}
+.b2 p:last-child{color:#3A4B50;font-size:16px;line-height:26px}
+.b2 p+p,.b2 h3+p{margin-top:0}
+@media(min-width:768px){.b2grid{grid-template-columns:1fr 1fr;max-width:980px;margin-left:auto;margin-right:auto}}
+/* Phản biện 25/11 */
+
+.tk-decline .btn{max-width:400px}
+.tk-vip .tk-p{font-size:40px;color:#C9A96A}
+.tk-vip .tk-p s{font:500 18px/1 'Be Vietnam Pro',system-ui,sans-serif;color:#9FB1AE;margin-right:6px;vertical-align:middle}
+.tk-vip .tk-s{color:#B7C6C4}
+.tickets{max-width:980px;margin-left:auto;margin-right:auto}
+.b2 .b2n{color:#7A5C24}
+.b2grid .b2:last-child:nth-child(odd){grid-column:1/-1}
+@media(min-width:768px){.paths{grid-template-columns:1fr 1fr;max-width:980px;margin-left:auto;margin-right:auto}}
+@media(min-width:900px){.tk-free{position:sticky;top:24px}}
+@media(max-width:899px){.tk-cd{margin-left:0}.tk-cd .cd-label,.tk-decline{text-align:left}}
+@media(max-width:399px){.tk-vip .btn{padding-left:14px;padding-right:14px}}
+/* Phản biện vòng 2 */
+.tk-vip .tk-s{margin-bottom:12px}
+.tk-decline.noreg-only{margin-top:36px}
+.b2grid .b2:last-child p{max-width:40em}
+@media(max-width:899px){.tk-decline .decline{text-align:left}}
+@media(max-width:399px){.fbox .btn{padding-left:14px;padding-right:14px}}
+@media(min-width:900px) and (max-height:720px){.tk-free{position:static}}
+/* 26/11 lần 2: vé VIP liệt kê lại toàn bộ, phần cộng thêm nổi bật */
+.tk-g{font-size:12.5px;line-height:18px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#B7C6C4;margin-top:20px;padding-top:16px;border-top:1px solid rgba(201,169,106,.25)}
+.tk-g+.tk-list{margin-top:12px}
+.tk-g.plus{color:#E3CB98}
+.tk-vip .tk-list .plus{color:#F7F2E8;font-weight:600}
+.tk-vip .tk-list .plus:before{background:#C9A96A;color:#0F2A33}
+.tk-list .val{display:inline-block;margin-left:6px;padding:0 8px;border-radius:999px;background:rgba(201,169,106,.18);color:#E3CB98;font-size:12.5px;line-height:20px;font-weight:600;white-space:nowrap;vertical-align:1px}
+.tk-vip .total{margin-top:18px;border-top:1px solid rgba(201,169,106,.35)}
+/* 26/11 lần 4: bản mobile căn giữa tiêu đề mục và nút */
+@media(max-width:899px){
+  .sec .text > .eyebrow,.sec .text > h2,.sec > .wrap > .eyebrow,.sec > .wrap > .eyebrow + h2{text-align:center}
+  .cta{margin-left:auto;margin-right:auto;text-align:center}
+}
+@media(max-width:899px){
+  .fbox .price{justify-content:center;text-align:center}
+  .fbox .vb-date{text-align:center}
+  .tk-cd{margin-left:auto}.tk-cd .cd-label,.tk-decline,.tk-decline .decline{text-align:center}
+  .tk-decline .btn{margin-left:auto;margin-right:auto}
+  .tk-vip .bigprice{justify-content:center}
+}
+/* 26/11 lần 6: mobile để vé miễn phí trước, vé VIP bên dưới */
+@media(max-width:899px){.tk-vip{order:0}.tickets{gap:32px}}
 </style>
 </head>
-<body>
-<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1873158107039231&ev=PageView&noscript=1" alt=""></noscript>
+<body class="no-reg">
 
-<div class="topbar">Buổi live 90 phút, 20h00 Thứ Ba 08/12/2026. Buổi tiếp theo: 07/01/2027.</div>
+<div class="freeok" role="status"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#2F8F5B"/><path d="M5.5 10.5l3 3 6-6.5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><div><p><b>Đã giữ chỗ miễn phí buổi 10/12<span data-for-name></span>.</b> 20h00 Thứ Năm 10/12/2026, link vào phòng gửi qua email và Zalo. <a id="free-cal" href="#" target="_blank" rel="noopener">Thêm vào Google Calendar</a></p><p class="fo-step"><b>Bước tiếp theo:</b> giữ vé miễn phí hoặc đăng ký vé VIP ở bên dưới.</p></div></div>
+
+<div class="topbar">Vé VIP: buổi 1 lúc 20h00 Thứ Năm 10/12 và buổi 2 lúc 20h00 Thứ Sáu 11/12/2026.</div>
 
 <header class="bg-ink hero">
   <div class="wrap hero-grid">
     <div>
-      <p class="eyebrow rise">Money Root Workshop, dành cho nữ chủ kinh doanh có gia đình</p>
-      <h1 class="rise d2">Sau 90 phút, chị biết tiền nhà mình đang rò ở đâu</h1>
-      <p class="h1-tail rise d2">Biết mình đang quyết tiền theo kiểu nào, và ra về với con số trả mình trước cho tháng 12.</p>
-      <figure class="hero-pic-m rise d2"><img src="127ced190c.webp" alt="Thái Ngoan" width="420" height="525"></figure>
-      <p class="sub rise d3">Trong buổi, chị làm phiếu Money Root 10 phút với số tròn của nhà mình. Không ai cần biết số của chị, và không cần học đầu tư trước.</p>
+      <p class="eyebrow rise">Vé VIP Money Root Workshop, dành cho nữ chủ kinh doanh có gia đình</p>
+      <h1 class="rise d2">Thêm buổi 2, làm cùng Thái&nbsp;Ngoan trên số của chính nhà&nbsp;mình</h1>
+      <p class="h1-tail rise d2">Làm phiếu Money Root 5 bước, ra con số chênh lệch mỗi năm của nhà mình, và hỏi Thái Ngoan trực tiếp trong 20 phút hỏi đáp.</p>
+      <figure class="hero-pic-m rise d2"><img src="img/2a76258073.webp" alt="Thái Ngoan" width="420" height="525"></figure>
+      <p class="sub rise d3">Buổi 1 miễn phí cho chị thấy vì sao tài sản nhà mình chưa lớn, và thứ tự nào cần đổi. Buổi 2 là lúc làm trên số của chính nhà mình: phiếu Money Root 5 bước, chia lại tiền vào 3 tài khoản, khung họp tiền gia đình, 20 phút hỏi đáp, bản ghi cả 2 buổi và ca học viên. Số tiền của nhà chị chỉ mình chị biết.</p>
 
       <div class="fbox rise d4" id="dang-ky">
-        <p class="cd-label">Buổi live bắt đầu sau</p>
+        <p class="cd-label">Buổi 2 bắt đầu sau</p>
         <div class="cd" data-cd>
           <div><b data-d>00</b><span>ngày</span></div>
           <div><b data-h>00</b><span>giờ</span></div>
           <div><b data-m>00</b><span>phút</span></div>
           <div><b data-s>00</b><span>giây</span></div>
         </div>
-        <form data-vnc-off class="reg" novalidate>
-          <div class="field"><label for="h-name">Họ và tên</label><input id="h-name" name="fullname" type="text" autocomplete="name" placeholder="Nguyễn Thị Lan"><p class="err">Chị điền họ và tên giúp nhé.</p></div>
-          <div class="field"><label for="h-email">Email nhận link vào phòng</label><input id="h-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="ten@email.com"><p class="err">Email chưa đúng định dạng.</p></div>
-          <div class="field"><label for="h-zalo">Số điện thoại Zalo</label><input id="h-zalo" name="zalo" type="tel" autocomplete="tel" inputmode="tel" placeholder="09xx xxx xxx"><p class="err">Số điện thoại Zalo cần 10 chữ số, bắt đầu bằng 0.</p></div>
-          <div class="price"><s>1.198.000đ</s><strong>299.000đ</strong><span class="off">Giảm 75%</span></div>
-          <button class="btn" type="submit">Giữ chỗ buổi 08/12</button>
-          <p class="fnote">Bước sau là thanh toán 299.000đ. Link vào phòng gửi qua email và Zalo.</p>
-        </form>
+        <p class="vb-date">Buổi 2 chỉ dành cho vé VIP: 20h00 Thứ Sáu 11/12/2026, 90 phút.</p>
+        <div class="price"><s>1.198.000đ</s><strong>299.000đ</strong><span class="off">Giảm 75%</span></div>
+        <a class="btn" href="02-thanh-toan-workshop.html" data-vip>Đăng ký vé VIP</a>
+        <p class="fnote reg-only">Thông tin của chị đã có từ bước giữ chỗ, không cần điền lại.</p>
+        <a class="decline reg-only" href="04-cam-on-workshop.html?ve=mien-phi" data-decline>Mình giữ vé miễn phí</a>
       </div>
       <p class="trust"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#C9A96A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>Không bán kèm bảo hiểm, quỹ hay cổ phiếu.</p>
       <div class="host host-m">
@@ -386,407 +481,179 @@ h2{font-size:28px;line-height:36px}
       </div>
     </div>
     <aside class="hero-side">
-      <img class="photo" src="127ced190c.webp" alt="Thái Ngoan" width="420" height="525">
+      <img class="photo" src="img/2a76258073.webp" alt="Thái Ngoan" width="420" height="525">
       <p class="cap"><b style="color:#F7F2E8">Thái Ngoan.</b> 18 năm kinh nghiệm tài chính ngân hàng, đồng hành hơn 500 khách hàng, trong đó có những nữ chủ doanh nghiệp và chủ kinh doanh tự do.</p>
     </aside>
   </div>
 </header>
 
-<section class="sec bg-cream" aria-labelledby="t1">
-  <div class="wrap">
-    <p class="eyebrow">Học viên kể lại</p>
-    <h2 id="t1">Những quyết định tiền đã đổi sau khi làm cùng Thái Ngoan</h2>
-    <div class="tgrid"><figure class="tcard shot">
-  <a class="tshot" href="6f8d6c4c17.webp"><img src="6f8d6c4c17.webp" alt="Tin nhắn chị Lan Anh K11: được nhờ mua thiết bị nhiều hơn dự định, đã hỏi lại nhu cầu thực sự; gửi lời cảm ơn chồng đã nỗ lực kiếm thêm thu nhập" width="800" height="558" loading="lazy"><span class="zoom-hint">Bấm để phóng to</span></a>
-</figure>
-<figure class="tcard shot">
-  <a class="tshot" href="4646627ee6.webp"><img src="4646627ee6.webp" alt="Tin nhắn học viên: thấy chi phí mỹ phẩm hơi nhiều, cắt giảm vừa đủ, tháng 3 tiết kiệm được nhiều hơn hẳn" width="800" height="276" loading="lazy"><span class="zoom-hint">Bấm để phóng to</span></a>
-</figure></div>
-    <p class="shot-note">Ảnh chụp tin nhắn gốc của học viên, đã cắt bớt phần không liên quan.</p>
-  </div>
-</section>
-
-<section class="sec bg-mist" aria-labelledby="t2">
+<section class="sec bg-mist" aria-labelledby="t0">
   <div class="wrap">
     <div class="text sh">
-      <p class="eyebrow">Sau 90 phút</p>
-      <h2 id="t2">Chị mang về 3 thứ, làm trên số của chính nhà mình</h2>
+      <p class="eyebrow">Sau buổi 1 miễn phí</p>
+      <h2 id="t0">Chị có 2 cách đi tiếp</h2>
     </div>
-    <div class="gets">
-      <article class="card get">
-        <svg viewBox="0 0 44 44" fill="none" stroke="#0F2A33" stroke-width="1.25" aria-hidden="true"><rect x="4" y="10" width="15" height="24" rx="2"/><rect x="25" y="10" width="15" height="24" rx="2"/><path d="M8 17h7M8 22h7M29 17h7M29 22h7" stroke="#C9A96A"/></svg>
-        <h3><span class="gn">1</span>Biết tiền nhà mình đang rò ở đâu</h3>
-        <p class="gk">Chị nhận được</p>
-        <p>Phiếu Money Root 5 bước, gửi kèm email nhắc lịch để chị in sẵn. Làm 10 phút ngay trong buổi, với số tròn.</p>
-        <p class="gk">Chị làm được</p>
-        <p>Thấy tháng vừa rồi tiền đã đi đâu, và mỗi năm nhà mình đang để lọt bao nhiêu tiền lẽ ra đã vào tài sản.</p>
+    <div class="paths">
+      <article class="card path-c">
+        <p class="p-tag">Cách 1 · Vé miễn phí</p>
+        <h3>Tự làm một mình với giấy&nbsp;bút</h3>
+        <p>Sau buổi 1, chị đã biết vì sao và có con số đầu tiên. Phần làm thế nào trên số của nhà mình, chị tự làm tiếp với giấy bút. Buổi 1 chỉ kịp hỏi đáp vài câu cuối buổi, và vé miễn phí không kèm bản ghi để xem lại.</p>
       </article>
-      <article class="card get">
-        <svg viewBox="0 0 44 44" fill="none" stroke="#0F2A33" stroke-width="1.25" aria-hidden="true"><circle cx="22" cy="22" r="16"/><path d="M22 6v32M6 22h32" stroke="#C9A96A"/><circle cx="22" cy="22" r="4" fill="#C9A96A" stroke="none"/></svg>
-        <h3><span class="gn">2</span>Biết mình đang quyết tiền theo kiểu nào</h3>
-        <p class="gk">Chị nhận được</p>
-        <p>5 câu Có/Không và bảng đọc kết quả: Reactive là quyết theo phản ứng, Tangled là tiền còn lẫn, Rooted là đã có quy tắc.</p>
-        <p class="gk">Chị làm được</p>
-        <p>Biết mình đang ở kiểu nào, và có đúng 1 việc làm ngay trong tuần cho kiểu đó.</p>
-      </article>
-      <article class="card get">
-        <svg viewBox="0 0 44 44" fill="none" stroke="#0F2A33" stroke-width="1.25" aria-hidden="true"><rect x="6" y="8" width="32" height="30" rx="3"/><path d="M6 16h32M14 4v8M30 4v8"/><path d="M15 27l5 5 9-10" stroke="#C9A96A"/></svg>
-        <h3><span class="gn">3</span>Ra về với con số trả mình trước cho tháng 12</h3>
-        <p class="gk">Chị nhận được</p>
-        <p>Bài "Cùng 80 triệu, hai cách chia", và vì sao 4 cách quen thuộc chưa đưa tài sản lên: tiết kiệm phần còn lại, đổ lời vào hàng, mua vàng hay đất theo tin, học đầu tư trước.</p>
-        <p class="gk">Chị làm được</p>
-        <p>Thấy chênh lệch đến từ thứ tự trả, không đến từ lợi suất hay kiếm thêm. Viết xong con số trả mình trước cho tháng 12: phần chuyển vào tài sản ngay khi tiền về, trước khi chi.</p>
+      <article class="card path-c vip">
+        <p class="p-tag">Cách 2 · Vé VIP</p>
+        <h3>Làm phiếu cùng Thái&nbsp;Ngoan, hỏi đúng chỗ đang&nbsp;vướng</h3>
+        <p>Buổi 2, chị làm phiếu Money Root với số tròn của nhà mình, chia lại tiền vào 3 tài khoản, và hỏi Thái Ngoan trực tiếp về tình huống nhà mình. Có bản ghi cả 2 buổi để xem lại, hoặc xem cùng chồng.</p>
       </article>
     </div>
-    <div class="prob">
-      <h3>Buổi này dành cho chị nếu</h3>
-      <ul class="probs">
-        <li>Doanh thu năm nay hơn năm ngoái, mà tài sản nhà mình không hơn được bao nhiêu</li>
-        <li>Làm nhiều mà không thấy tiền đâu</li>
-        <li>Tiền kinh doanh, tiền hàng với tiền nhà lẫn hết</li>
-        <li>Lời bao nhiêu lại đổ vào hàng</li>
-        <li>Gồng gánh tài chính cả nhà mà chồng chưa hiểu áp lực của mình</li>
-        <li>Có tiền mà vẫn thấy thiếu</li>
-        <li>Đang phân vân nên mua vàng hay mua đất</li>
-      </ul>
-      <p class="cause">Một trong những nguyên nhân chính dẫn tới những điều này là thứ tự trả tiền trong nhà, và thứ tự đó đổi được.</p>
-    </div>
-    <div class="cta"><a class="btn" href="#giu-cho">Giữ chỗ buổi 08/12</a></div>
+    <div class="cta"><a class="btn" href="#chon-ve">Đăng ký vé VIP</a></div>
   </div>
 </section>
 
-<section class="sec bg-ink" aria-labelledby="t4">
+<section class="sec bg-cream" aria-labelledby="t2">
   <div class="wrap">
     <div class="text sh">
-      <p class="eyebrow">Ví dụ minh họa trong buổi live</p>
-      <h2 id="t4">Cùng 80 triệu, hai cách chia</h2>
-      <p class="muted"><b style="color:#F7F2E8">Ví dụ minh họa:</b> giả định mỗi tháng có 80 triệu tiền về tay chủ. Cùng một người, cùng một mức tiền, chỉ khác cách quyết.</p>
+      <p class="eyebrow">Buổi 2 · 20h00 Thứ Sáu 11/12/2026 · 90&nbsp;phút</p>
+      <h2 id="t2">6 điều chị nhận thêm với vé&nbsp;VIP</h2>
     </div>
-    <div class="chart-grid">
-      <div class="chart">
-        <svg viewBox="0 0 340 290" role="img" aria-labelledby="c80">
-          <title id="c80">Ví dụ minh họa. Cùng 80 triệu mỗi tháng: quyết theo phản ứng 48 triệu mỗi năm vào tài sản, theo Money Root System 192 triệu mỗi năm.</title>
-          <text x="16" y="22" fill="#E3CB98" font-family="Be Vietnam Pro, Arial, sans-serif" font-size="13" font-weight="600">Ví dụ minh họa</text>
-          <line x1="16" y1="234" x2="324" y2="234" stroke="#C9A96A" stroke-opacity=".55" stroke-width="1.25"/>
-          <rect x="52" y="186" width="84" height="48" rx="3" fill="none" stroke="#C9A96A" stroke-width="1.25"/>
-          <rect x="212" y="42" width="84" height="192" rx="3" fill="#C9A96A"/>
-          <text x="94" y="174" text-anchor="middle" fill="#F7F2E8" font-family="Cormorant Garamond, Georgia, serif" font-size="26" font-weight="600">48 tr</text>
-          <text x="254" y="32" text-anchor="middle" fill="#F7F2E8" font-family="Cormorant Garamond, Georgia, serif" font-size="26" font-weight="600">192 tr</text>
-          <g stroke="#E3CB98" stroke-width="1.25"><line x1="136" y1="186" x2="190" y2="186" stroke-dasharray="3 4"/><line x1="190" y1="42" x2="212" y2="42" stroke-dasharray="3 4"/><line x1="190" y1="42" x2="190" y2="186"/><line x1="185" y1="42" x2="195" y2="42"/><line x1="185" y1="186" x2="195" y2="186"/></g>
-          <text x="180" y="108" text-anchor="end" fill="#E3CB98" font-family="Be Vietnam Pro, Arial, sans-serif" font-size="13" font-weight="600">Chênh</text>
-          <text x="180" y="126" text-anchor="end" fill="#E3CB98" font-family="Be Vietnam Pro, Arial, sans-serif" font-size="13" font-weight="600">144 tr/năm</text>
-          <g font-family="Be Vietnam Pro, Arial, sans-serif" text-anchor="middle"><text x="94" y="256" fill="#D6DCD8" font-size="13">Theo phản ứng</text><text x="94" y="275" fill="#B7C6C4" font-size="12">4 tr mỗi tháng</text><text x="254" y="256" fill="#D6DCD8" font-size="13">Theo Money Root System</text><text x="254" y="275" fill="#B7C6C4" font-size="12">16 tr mỗi tháng</text></g>
-        </svg>
-      </div>
-      <div>
-        <div class="stat"><p class="cap muted">Ví dụ minh họa, quyết theo phản ứng</p><p class="big">48 triệu</p><p>mỗi năm vào tài sản, tức 4 triệu mỗi tháng.</p></div>
-        <div class="stat"><p class="cap muted">Ví dụ minh họa, theo Money Root System</p><p class="big">192 triệu</p><p>mỗi năm vào tài sản, tức 16 triệu mỗi tháng.</p></div>
-        <p class="gap">Trong ví dụ này: chênh 144 triệu một năm, chưa tính lợi suất.</p>
-        <p class="illus">Minh họa của team, không phải số liệu học viên, không cam kết lợi suất.</p>
-      </div>
+    <div class="b2grid">
+      <article class="card b2"><p class="b2n">01</p><h3>Thấy con số chênh lệch mỗi năm của chính nhà&nbsp;mình</h3><p>Lần này là số của chính nhà chị. Chị tự chia số tiền của nhà mình theo hai cách, chấm kiểu quyết tiền bằng phiếu Money Root 5 bước, và biết việc cần làm ngay tuần này.</p></article>
+      <article class="card b2"><p class="b2n">02</p><h3>Bản chia tiền đầu tiên cho nhà mình, có cả lương cho chính&nbsp;chị</h3><p>Chị đặt tỷ lệ trả mình trước cho riêng nhà mình, chọn con số lương cố định cho chính mình, rồi chia số của nhà mình vào 3 tài khoản: Tài sản, Chi thiết yếu, Chi hưởng thụ, biết mở thế nào, đặt tên gì, chuyển ngày nào. Chị ra về với tỷ lệ bản nháp để bắt đầu tách tiền kinh doanh khỏi tiền nhà.</p></article>
+      <article class="card b2"><p class="b2n">03</p><h3>Sẵn ngày họp tiền đầu tiên và tin nhắn mời&nbsp;chồng</h3><p>Thái Ngoan đi qua khung buổi họp tiền gia đình lần đầu. Chị chốt ngày họp và soạn xong tin nhắn mời chồng ngay trong buổi, về nhà chỉ cần bấm gửi.</p></article>
+      <article class="card b2"><p class="b2n">04</p><h3>Hỏi trực tiếp chỗ đang vướng của nhà&nbsp;chị</h3><p>20 phút hỏi đáp: chị mang câu hỏi về đúng tình huống nhà mình, hỏi Thái Ngoan trực tiếp ngay trong buổi.</p></article>
+      <article class="card b2"><p class="b2n">05</p><h3>Tối bận vẫn không lỡ, xem lại cùng&nbsp;chồng</h3><p>Bản ghi cả 2 buổi gửi trong 24 giờ sau mỗi buổi. Chị xem lại đúng phần cần, hoặc mở cho chồng cùng xem.</p></article>
+      <article class="card b2"><p class="b2n">06</p><h3>Nghe một ca học viên kể chi&nbsp;tiết</h3><p>Một học viên của Thái Ngoan kể lại hành trình của mình theo 3 kết quả: tách tiền, phần vào tài sản mỗi tháng, kế hoạch có chồng cùng thống nhất.</p></article>
     </div>
-    <div class="t4-end">
-      <p class="ask">Câu hỏi không phải chị kiếm bao nhiêu. Câu hỏi là trong nhà chị, điều gì đang được trả trước.</p>
-      <p class="muted" style="margin-top:12px">Điều kiện: cách chia này cần lợi nhuận kinh doanh đủ đều để mỗi tháng trả cho chính chị một khoản cố định.</p>
-      <p class="tease">Chi tiết từng khoản, và vì sao chênh 144 triệu mà khoản tận hưởng cuộc sống vẫn giữ nguyên, chị xem trong buổi live rồi làm lại với số của nhà mình.</p>
-    </div>
-    <div class="cta"><a class="btn" href="#giu-cho">Giữ chỗ buổi 08/12</a></div>
+    <div class="cta"><a class="btn" href="#chon-ve">Đăng ký vé VIP</a></div>
   </div>
 </section>
 
-<section class="sec bg-cream" aria-labelledby="t3">
+<section class="sec bg-ink" id="chon-ve" aria-labelledby="t7">
   <div class="wrap">
     <div class="text sh">
-      <p class="eyebrow">Chương trình 12 tuần sau buổi live</p>
-      <h2 id="t3">Sau 12 tuần, 3 kết quả cụ thể</h2>
-      <p class="muted">Dành cho ai muốn đi tiếp sau buổi live.</p>
+      <p class="eyebrow">Chọn vé</p>
+      <h2 id="t7">Vé miễn phí và vé VIP khác nhau thế nào</h2>
+      <p class="muted">Buổi 1 lúc 20h00 Thứ Năm 10/12/2026, buổi 2 lúc 20h00 Thứ Sáu 11/12/2026, mỗi buổi 90 phút.</p>
     </div>
-    <ol class="promise3">
-      <li><span class="pn">1</span><span>Tiền kinh doanh tách khỏi tiền nhà</span></li>
-      <li><span class="pn">2</span><span>Ít nhất 20% lợi nhuận mỗi tháng tự chuyển vào tài sản</span></li>
-      <li><span class="pn">3</span><span>Một kế hoạch tài sản 12 tháng cả hai vợ chồng cùng thống nhất</span></li>
-    </ol>
-    <p class="promise-note">Không cần học đầu tư. Không cam kết lợi suất. 20% là phần chị tự chuyển vào tài sản mỗi tháng, không phải tiền lãi. Kết quả phụ thuộc lợi nhuận kinh doanh và kỷ luật của từng gia đình.</p>
-    <h3 class="phase-lead">Đi qua 3 giai đoạn: gốc trước, quyết định sau, tài sản lớn sau cùng</h3>
-    <div class="phases">
-      <article class="card phase">
-        <p class="wk">Tuần 1 đến 3</p>
-        <h3>Root, phần gốc</h3>
-        <p class="lede">Gốc là mối quan hệ với tiền: niềm tin, thói quen và cảm giác "chưa đủ" đang lái quyết định tiền thế nào, và nhà mình thật sự đang có gì. Nhiều chị đã tách tài khoản rồi lại gộp, chuyển 20% rồi lại rút ra. Root xử lý chỗ đó trước, để những việc sau giữ được lâu.</p>
-        <ul class="pairs">
-          <li><b>Money Root Check lần đầu</b><span>Biết chị đang Reactive, Tangled hay Rooted. Cuối chương trình làm lại để so.</span></li>
-          <li><b>Bản đồ gốc tiền (Money Root Map)</b><span>Câu chuyện tiền từ gia đình gốc, cảm giác "chưa đủ", và vai trò tiền giữa hai vợ chồng, trên một trang.</span></li>
-          <li><b>Tài sản ròng hôm nay (Net Worth Baseline)</b><span>Có mốc để so lại mỗi quý, kèm ba con số Vào, Ra, Tích lũy mà hai vợ chồng cùng xác nhận.</span></li>
-          <li><b>Money Date cùng chồng</b><span>Buổi hẹn nói chuyện tiền của hai vợ chồng. Biết mỗi tháng nhà mình đang chuyển bao nhiêu phần trăm vào tài sản.</span></li>
-        </ul>
-      </article>
-      <article class="card phase">
-        <p class="wk">Tuần 4 đến 7</p>
-        <h3>Decision, phần quyết định</h3>
-        <p class="lede">Xong giai đoạn này, tiền kinh doanh tách khỏi tiền nhà, và ít nhất 20% lợi nhuận mỗi tháng tự chuyển vào tài sản.</p>
-        <ul class="pairs">
-          <li><b>Thỏa thuận tiền gia đình (Family Money Agreement)</b><span>Buổi họp tiền gia đình. Ai quyết khoản nào, tiền cho con và bố mẹ bao nhiêu.</span></li>
-          <li><b>Tách tiền (Money Separation)</b><span>Hai tài khoản riêng. Khoản lương cố định cho chính chị có con số và ngày chuyển.</span></li>
-          <li><b>Hệ thống chi tiêu (Spending System)</b><span>Quỹ chi tiêu của nhà và tỷ lệ chia lợi nhuận mỗi tháng.</span></li>
-          <li><b>Chạy thật</b><span>Lệnh chuyển tự động chạy kỳ đầu. Tài khoản Tài sản nhận từ 20% lợi nhuận ngay tháng đó.</span></li>
-        </ul>
-      </article>
-      <article class="card phase">
-        <p class="wk">Tuần 8 đến 12</p>
-        <h3>Grow, phần tài sản</h3>
-        <p class="lede">Xong giai đoạn này, nhà chị có một kế hoạch tài sản 12 tháng cả hai vợ chồng cùng thống nhất.</p>
-        <ul class="pairs">
-          <li><b>Kiến thức nền tảng (Financial Foundation)</b><span>Hiểu những kiến thức nền tảng quan trọng về nền kinh tế, cách tiền vận hành, bản chất tài sản, từ đó tự đưa ra được các quyết định đầu tư an toàn và hiệu quả.</span></li>
-          <li><b>Mục tiêu chung (Lifestyle Goals)</b><span>Những điều cả nhà muốn có, hai vợ chồng cùng đặt thành con số và mốc thời gian.</span></li>
-          <li><b>Bản đồ đặt tài sản (Asset Placement Map)</b><span>Tiền nằm ở đâu, theo tỷ lệ bao nhiêu. Gặp tin nóng thì đối chiếu tỷ lệ.</span></li>
-          <li><b>Phân bổ tự động</b><span>Tiền về là tự chia theo tỷ lệ đã đặt.</span></li>
-        </ul>
-      </article>
-    </div>
-    <div class="w12"><span class="circ">12</span><p><b>Kết thúc 12 tuần: kế hoạch tài sản 12 tháng (Rooted Wealth Plan).</b> Có chữ ký hai vợ chồng, kèm lịch rà lại mỗi quý.</p></div>
-    <p class="name-note">Chương trình gọi cách làm này là <b>Money Root System</b>. Trong buổi live, chị thấy rõ từng kết quả đến từ đâu và tự xét mình có phù hợp không. Đi trọn 12 tuần là phần của Rooted Wealth Program, dành cho người đạt điều kiện sau buổi.</p>
-    <div class="cta"><a class="btn" href="#giu-cho">Giữ chỗ buổi 08/12</a></div>
-  </div>
-</section>
-
-<section class="sec bg-ink ev" id="co-so" aria-labelledby="ev-h">
-  <div class="wrap">
-    <div class="text sh">
-      <p class="eyebrow">Vì sao cách này hiệu quả</p>
-      <h2 id="ev-h">Mỗi bước trong 3 giai đoạn đều có cơ sở</h2>
-      <p class="muted">5 việc chính của 3 giai đoạn trên, từ biết kiểu quyết tiền của mình đến hai vợ chồng cùng thống nhất, đều có bằng chứng đi kèm: nghiên cứu, sách của chuyên gia tài chính, hoặc quy định đang áp dụng tại Việt Nam.</p>
-    </div>
-    <div class="ev-list">
-      <article class="ev-card">
-        <div class="ev-head">
-          <div class="ev-types"><span>Nghiên cứu</span><span>Sách và chuyên gia</span></div>
-          <h3><span class="circ">1</span>Nhìn rõ kiểu quyết định tiền của mình</h3>
-          <p class="ev-phase">Trong 3 giai đoạn: Root, Money Root Check lần đầu</p>
-        </div>
-        <div class="ev-body">
-          <div class="ev-item">
-            <p class="ev-big">422<small>người tham gia</small></p>
-            <p>Một nghiên cứu trên 422 người xác định 4 kiểu niềm tin về tiền. Ba trong bốn kiểu có liên quan đến mức thu nhập và tài sản ròng.</p>
-            <p class="ev-src">Klontz, Britt, Mentzer và Klontz. Journal of Financial Therapy, 2011</p>
-          </div>
-          <div class="ev-item">
-            <p>Nhà trị liệu tài chính Bari Tessler khuyên các cặp đôi bắt đầu bằng việc mỗi người kể "câu chuyện tiền" của mình.</p>
-            <p class="ev-src">Bari Tessler. The Art of Money, 2016</p>
-          </div>
-        </div>
-        <p class="ev-help"><b>Điều này giúp chị:</b> biết mình đang quyết tiền theo kiểu nào, để sửa đúng chỗ trước.</p>
-      </article>
-
-      <article class="ev-card">
-        <div class="ev-head">
-          <div class="ev-types"><span>Sách và chuyên gia</span><span class="vn">Quy định tại Việt Nam</span></div>
-          <h3><span class="circ">2</span>Tách tiền kinh doanh khỏi tiền nhà</h3>
-          <p class="ev-phase">Trong 3 giai đoạn: Decision, Tách tiền (Money Separation)</p>
-        </div>
-        <div class="ev-body">
-          <div class="ev-item">
-            <p>Ở Mỹ, FDIC nêu lợi ích của việc giữ tài khoản kinh doanh riêng, gồm bảo vệ và dễ ghi chép sổ sách. Cơ quan thuế Hoa Kỳ (IRS) cũng khuyến nghị tách tài khoản kinh doanh khỏi tài khoản cá nhân.</p>
-            <p class="ev-src">FDIC (Hoa Kỳ), 2019. Cơ quan thuế Hoa Kỳ (IRS)</p>
-          </div>
-          <div class="ev-item">
-            <p>Mike Michalowicz, tác giả Profit First: mỗi lần có tiền bán hàng về, lấy ngay một tỷ lệ định trước làm lợi nhuận.</p>
-            <p class="ev-src">Mike Michalowicz. Profit First, 2014</p>
-          </div>
-          <div class="ev-item">
-            <p>Chuyên gia tài chính Nguyễn Duy Chuyền: "hãy độc lập tiền của công ty và tiền cá nhân". Muốn dùng tiền thì tự trả lương cho mình.</p>
-            <p class="ev-src">Nguyễn Duy Chuyền. Nhịp sống thị trường, 2024</p>
-          </div>
-          <div class="ev-item">
-            <p>Luật sư Nguyễn Quốc Toản, Giám đốc Hãng luật IAM: người có hoạt động mua bán thu tiền và phải kê khai thuế nên dùng tài khoản ngân hàng tách bạch hoàn toàn với tài khoản cá nhân.</p>
-            <p class="ev-src">Báo Thanh Niên, 2026</p>
-          </div>
-          <div class="ev-vn">
-            <p class="lbl">Quy định tại Việt Nam</p>
-            <p>Nếu chị là hộ kinh doanh: từ 2026, hộ kinh doanh phải thông báo cho cơ quan thuế tất cả tài khoản ngân hàng và ví điện tử dùng cho kinh doanh.</p>
-            <p class="ev-src">Nghị định 68/2026/NĐ-CP. Nội dung giáo dục, chưa thay thế tư vấn pháp lý.</p>
-          </div>
-        </div>
-        <p class="ev-help"><b>Điều này giúp chị:</b> nhìn tài khoản là biết tiền nào của kinh doanh, tiền nào của nhà, sổ sách gọn khi kê khai.</p>
-      </article>
-
-      <article class="ev-card">
-        <div class="ev-head">
-          <div class="ev-types"><span>Sách và chuyên gia</span></div>
-          <h3><span class="circ">3</span>Trả lương cho mình, trả cho mình trước</h3>
-          <p class="ev-phase">Trong 3 giai đoạn: Decision, đặt khoản lương cố định cho chính chị rồi chạy thật</p>
-        </div>
-        <div class="ev-body">
-          <div class="ev-item">
-            <p class="ev-quote">"Một phần mọi khoản bạn kiếm được là của bạn để giữ lại, không ít hơn một phần mười, dù bạn kiếm ít đến đâu. Hãy trả cho chính mình trước."</p>
-            <p class="ev-src">George S. Clason. The Richest Man in Babylon, 1926</p>
-          </div>
-          <div class="ev-item">
-            <p>Chuyên gia tài chính Nguyễn Duy Chuyền: lương của chủ nên ở mức doanh nghiệp vẫn trả được trong tháng kém.</p>
-            <p class="ev-src">Nguyễn Duy Chuyền. Nhịp sống thị trường, 2024</p>
-          </div>
-        </div>
-        <p class="ev-help"><b>Điều này giúp chị:</b> có một mức lương cố định cho chính mình, tháng kinh doanh chậm nhà vẫn chi tiêu đều.</p>
-      </article>
-
-      <article class="ev-card">
-        <div class="ev-head">
-          <div class="ev-types"><span>Nghiên cứu</span></div>
-          <h3><span class="circ">4</span>Chuyển tự động theo tỷ lệ định trước</h3>
-          <p class="ev-phase">Trong 3 giai đoạn: Decision, lệnh chuyển tự động chạy kỳ đầu. Grow, phân bổ tự động</p>
-        </div>
-        <div class="ev-body">
-          <div class="ev-item">
-            <p class="ev-big">3,5%<small>lên</small>13,6%</p>
-            <p>Trong một nghiên cứu ở một công ty Mỹ, nhân viên cam kết từ trước sẽ dành một phần tiền tăng lương để tiết kiệm vào quỹ hưu trí. Sau 40 tháng, tỷ lệ tiết kiệm trung bình của họ tăng từ 3,5% lên 13,6%.</p>
-            <p>Đây là kết quả của nhân viên một công ty Mỹ, với quyết định được đặt từ trước. Kết quả của từng gia đình sẽ khác.</p>
-            <p class="ev-src">Thaler và Benartzi. Journal of Political Economy, 2004</p>
-          </div>
-        </div>
-        <p class="ev-help"><b>Điều này giúp chị:</b> đặt tỷ lệ một lần, tiền tự chuyển vào tài sản mỗi tháng, chị khỏi phải nhớ.</p>
-      </article>
-
-      <article class="ev-card">
-        <div class="ev-head">
-          <div class="ev-types"><span>Nghiên cứu</span><span>Sách và chuyên gia</span></div>
-          <h3><span class="circ">5</span>Hai vợ chồng cùng thống nhất và họp tiền đều</h3>
-          <p class="ev-phase">Trong 3 giai đoạn: Root, Money Date cùng chồng. Decision, buổi họp tiền gia đình</p>
-        </div>
-        <div class="ev-body">
-          <div class="ev-item">
-            <p class="ev-big">4.574<small>cặp vợ chồng</small></p>
-            <p>Một nghiên cứu theo dõi 4.574 cặp vợ chồng ở Mỹ cho thấy bất đồng về tiền là loại bất đồng dự báo ly hôn mạnh hơn các loại bất đồng thường gặp khác. Vì vậy một thỏa thuận tiền rõ ràng giữa hai vợ chồng có giá trị.</p>
-            <p class="ev-src">Dew, Britt và Huston. Family Relations, 2012</p>
-          </div>
-          <div class="ev-item">
-            <p>Bari Tessler khuyên các cặp đôi hẹn nhau một buổi nói chuyện về tiền đều đặn và thống nhất rõ ai làm gì với tiền.</p>
-            <p class="ev-src">Bari Tessler. The Art of Money, 2016</p>
-            <p class="ev-own">Buổi họp tiền 15 phút mỗi tháng là cách Thái Ngoan thiết kế cho chương trình.</p>
-          </div>
-        </div>
-        <p class="ev-help"><b>Điều này giúp chị:</b> hai vợ chồng có buổi họp tiền đều đặn và một thỏa thuận rõ ai quyết khoản nào.</p>
-      </article>
-    </div>
-    <p class="ev-note">Bản dịch của đội ngũ. Nghiên cứu ở nước ngoài, kết quả của từng gia đình sẽ khác. Nội dung mang tính giáo dục.</p>
-    <div class="cta"><a class="btn" href="#giu-cho">Giữ chỗ buổi 08/12</a></div>
-  </div>
-</section>
-
-<section class="sec bg-mist" aria-labelledby="t5">
-  <div class="wrap">
-    <p class="eyebrow">Học viên kể lại</p>
-    <h2 id="t5">Sau khi tách tiền và đặt quy tắc</h2>
-    <div class="tgrid"><figure class="tcard shot">
-  <a class="tshot" href="8f51b248a1.webp"><img src="8f51b248a1.webp" alt="Tin nhắn học viên K5: sau khi nói chuyện, chồng đồng ý, 2 lần lấy lương đều chuyển tiền sang tài khoản tiết kiệm" width="800" height="425" loading="lazy"><span class="zoom-hint">Bấm để phóng to</span></a>
-</figure>
-<figure class="tcard shot">
-  <a class="tshot" href="3898970dd0.webp"><img src="3898970dd0.webp" alt="Ghi chép của học viên: hoàn tất nhật ký thu chi, nói chuyện với chồng, chồng có kế hoạch rút phần lợi nhuận, tách bạch với công ty" width="672" height="235" loading="lazy"><span class="zoom-hint">Bấm để phóng to</span></a>
-</figure></div>
-    <p class="shot-note">Ảnh chụp tin nhắn và ghi chép gốc của học viên, đã cắt bớt phần không liên quan.</p>
-  </div>
-</section>
-
-<section class="sec bg-cream" aria-labelledby="t6">
-  <div class="wrap">
-    <p class="eyebrow">Học viên kể lại</p>
-    <h2 id="t6">Chia sẻ của một học viên sau 1 tháng áp dụng</h2>
-    <div class="card case">
-      <div class="case-grid">
-        <a class="tshot" href="dea00e4a2a.webp"><img src="dea00e4a2a.webp" alt="Bài chia sẻ của chị Đinh Thu Hiền, học viên Bình An Tài Chính K10: sau 1 tháng tiết kiệm được hơn 35% tổng chi tiêu sinh hoạt của cả nhà" width="518" height="652" loading="lazy"><span class="zoom-hint">Bấm để phóng to</span></a>
-        <div>
-          <p class="case-name"><b>Đinh Thu Hiền</b>, Coach tại Hà Nội, học viên Bình An Tài Chính K10</p>
-          <dl>
-            <div><dt>Trước</dt><dd>Đồ thiết yếu mua một lần thật nhiều, dùng vài tháng chưa hết. Tháng nào phát sinh mua là tự dưng hụt một khoản tiền lớn.</dd></div>
-            <div><dt>Ai được trả trước</dt><dd>Tiền về cắt vào quỹ dự phòng trước.</dd></div>
-            <div><dt>Khoản nào có quy tắc</dt><dd>Ghi chi tiêu hằng tuần. Đồ thiết yếu tính vừa đủ cho 1 tháng. Đồ sinh hoạt để sẵn trong giỏ, đến ngày sale trong tháng mới thanh toán.</dd></div>
-            <div><dt>Tiền dư nằm ở đâu</dt><dd>Tài khoản dự phòng tách hẳn khỏi tài khoản chi tiêu. Tháng đầu chị chuyển sang app ngân hàng khác và ẩn icon trên điện thoại để khỏi lỡ tay tiêu.</dd></div>
-            <div><dt>Sau</dt><dd>Sau 1 tháng, tiết kiệm được hơn 35% tổng chi tiêu sinh hoạt của cả nhà mà vẫn thấy thoải mái, đủ đầy.</dd></div>
-          </dl>
-        </div>
-      </div>
-    </div>
-    <div class="cta"><a class="btn" href="#giu-cho">Giữ chỗ buổi 08/12</a></div>
-  </div>
-</section>
-
-<section class="sec bg-ink" id="ve" aria-labelledby="t7">
-  <div class="wrap offer-grid">
-    <div class="text">
-      <p class="eyebrow">Vé tham dự</p>
-      <h2 id="t7">Chị nhận được gì với vé 299.000đ</h2>
-      <p class="muted">Live 90 phút lúc 20h00 Thứ Ba 08/12/2026. Buổi tiếp theo 20h00 Thứ Năm 07/01/2027.</p>
-      <p class="cd-label" style="margin-top:28px">Buổi live bắt đầu sau</p>
+    <div class="tk-cd">
+      <p class="cd-label">Buổi 2 bắt đầu sau</p>
       <div class="cd dk" data-cd>
-        <div><b data-d>00</b><span>ngày</span></div>
-        <div><b data-h>00</b><span>giờ</span></div>
-        <div><b data-m>00</b><span>phút</span></div>
-        <div><b data-s>00</b><span>giây</span></div>
+          <div><b data-d>00</b><span>ngày</span></div>
+          <div><b data-h>00</b><span>giờ</span></div>
+          <div><b data-m>00</b><span>phút</span></div>
+          <div><b data-s>00</b><span>giây</span></div>
+        </div>
+    </div>
+    <div class="tickets">
+      <div class="tk tk-free">
+        <p class="tk-l">Vé miễn phí</p>
+        <p class="tk-p">0đ</p>
+        <p class="tk-s reg-only">Chị đã có vé này</p>
+        <ul class="tk-list">
+          <li class="y">Buổi 1, live 90 phút cùng Thái Ngoan (10/12)</li>
+          <li class="y">Biết tiền nhà mình đang rò ở đâu: tài sản được trả thứ mấy</li>
+          <li class="y">Ví dụ 80 triệu: chỉ đổi thứ tự, chênh 144 triệu một năm</li>
+          <li class="y">Vì sao tiền kinh doanh phải tách khỏi tiền nhà</li>
+          <li class="y">Vì sao chị cần trả lương cho chính mình</li>
+          <li class="y">Biết có 3 kiểu quyết tiền, đoán thử mình kiểu nào</li>
+          <li class="y">Bức tranh 3 giai đoạn Root, Decision, Grow</li>
+          <li class="y">Quy tắc 72 giờ, bớt những khoản lớn quyết vội</li>
+          <li class="y">Con số trả mình trước cho tháng 12</li>
+          <li class="y">Câu mời chồng cùng họp tiền</li>
+          <li class="y">Hỏi đáp cuối buổi 1 cùng Thái Ngoan</li>
+          <li class="y">Phiếu ứng tuyển chương trình 12 tuần</li>
+          <li class="n">Buổi 2, live 90 phút làm trên số của nhà mình (11/12)</li>
+          <li class="n">Phiếu Money Root 5 bước, gửi trước để in sẵn</li>
+          <li class="n">Tự chia số tiền của nhà mình theo hai cách, ra con số chênh lệch mỗi năm</li>
+          <li class="n">Chấm kiểu quyết tiền của mình bằng phiếu 5 bước, và 1 việc làm ngay tuần này</li>
+          <li class="n">Chọn con số lương cố định cho chính chị</li>
+          <li class="n">Đặt tỷ lệ trả mình trước cho riêng nhà mình</li>
+          <li class="n">3 tài khoản Tài sản, Chi thiết yếu, Chi hưởng thụ: mở thế nào, đặt tên gì, chuyển ngày nào</li>
+          <li class="n">Khung họp tiền gia đình lần đầu, tin nhắn mời chồng soạn xong trong buổi</li>
+          <li class="n">20 phút hỏi Thái Ngoan trực tiếp về tình huống nhà mình</li>
+          <li class="n">Bản ghi cả 2 buổi, xem lại hoặc xem cùng chồng</li>
+          <li class="n">Ca học viên chi tiết, kể theo 3 kết quả</li>
+        </ul>
+      </div>
+      <div class="tk tk-vip stack">
+        <span class="tk-rib">VIP</span>
+        <p class="tk-l">Vé VIP · gồm cả buổi 1 và buổi 2</p>
+        <p class="tk-p"><s>1.198.000đ</s> 299.000đ</p>
+        <p class="tk-s">Giảm 75%</p>
+      <p class="tk-g">Mọi thứ của vé miễn phí</p>
+        <ul class="tk-list">
+          <li class="y">Buổi 1, live 90 phút cùng Thái Ngoan (10/12)</li>
+          <li class="y">Biết tiền nhà mình đang rò ở đâu: tài sản được trả thứ mấy</li>
+          <li class="y">Ví dụ 80 triệu: chỉ đổi thứ tự, chênh 144 triệu một năm</li>
+          <li class="y">Vì sao tiền kinh doanh phải tách khỏi tiền nhà</li>
+          <li class="y">Vì sao chị cần trả lương cho chính mình</li>
+          <li class="y">Biết có 3 kiểu quyết tiền, đoán thử mình kiểu nào</li>
+          <li class="y">Bức tranh 3 giai đoạn Root, Decision, Grow</li>
+          <li class="y">Quy tắc 72 giờ, bớt những khoản lớn quyết vội</li>
+          <li class="y">Con số trả mình trước cho tháng 12</li>
+          <li class="y">Câu mời chồng cùng họp tiền</li>
+          <li class="y">Hỏi đáp cuối buổi 1 cùng Thái Ngoan</li>
+          <li class="y">Phiếu ứng tuyển chương trình 12 tuần</li>
+        </ul>
+        <p class="tk-g plus">Cộng thêm 11 quyền lợi, chỉ có ở vé VIP</p>
+        <ul class="tk-list">
+          <li class="y plus">Buổi 2, live 90 phút làm trên số của nhà mình (11/12) <span class="val">999.000đ</span></li>
+          <li class="y plus">Phiếu Money Root 5 bước, gửi trước để in sẵn <span class="val">199.000đ</span></li>
+          <li class="y plus">Tự chia số tiền của nhà mình theo hai cách, ra con số chênh lệch mỗi năm</li>
+          <li class="y plus">Chấm kiểu quyết tiền của mình bằng phiếu 5 bước, và 1 việc làm ngay tuần này</li>
+          <li class="y plus">Chọn con số lương cố định cho chính chị</li>
+          <li class="y plus">Đặt tỷ lệ trả mình trước cho riêng nhà mình</li>
+          <li class="y plus">3 tài khoản Tài sản, Chi thiết yếu, Chi hưởng thụ: mở thế nào, đặt tên gì, chuyển ngày nào</li>
+          <li class="y plus">Khung họp tiền gia đình lần đầu, tin nhắn mời chồng soạn xong trong buổi</li>
+          <li class="y plus">20 phút hỏi Thái Ngoan trực tiếp về tình huống nhà mình</li>
+          <li class="y plus">Bản ghi cả 2 buổi, xem lại hoặc xem cùng chồng</li>
+          <li class="y plus">Ca học viên chi tiết, kể theo 3 kết quả</li>
+        </ul>
+      <div class="total"><span>Tổng giá trị</span><s>1.198.000đ</s></div>
+        <div class="bigprice"><strong>299.000đ</strong><span class="off">Giảm 75%</span></div>
+        <div class="cta"><a class="btn" href="02-thanh-toan-workshop.html" data-vip>Đăng ký vé VIP</a></div>
+        <p class="tk-trust reg-only">Thông tin của chị đã có từ bước giữ chỗ, không cần điền lại.</p>
+        <p class="tk-trust">Không bán kèm bảo hiểm, quỹ hay cổ phiếu.</p>
       </div>
     </div>
-    <div class="stack">
-      <div class="row"><span>Buổi live 90 phút cùng Thái Ngoan<small>5 phần, cuối buổi 10 phút hỏi đáp tình huống nhà mình</small></span><span class="v">999.000đ</span></div>
-      <div class="row"><span>Phiếu Money Root 5 bước<small>Gửi kèm email nhắc lịch để chị in sẵn. Làm 10 phút trong buổi, ra con số chênh lệch của nhà mình và kiểu quyết tiền của chị</small></span><span class="v">199.000đ</span></div>
-      <div class="row"><span>Bài "Cùng 80 triệu, hai cách chia"<small>Thấy chênh lệch đến từ thứ tự trả, và vì sao 4 cách quen thuộc chưa đưa tài sản lên</small></span><span class="v">Kèm vé</span></div>
-      <div class="row"><span>Ca học viên<small>Một học viên cũ có hoàn cảnh giống chị kể lại 3 kết quả của mình sau chương trình: tách tiền, phần vào tài sản mỗi tháng, kế hoạch có chồng cùng thống nhất. Chỗ nào chưa đạt, chị ấy nói thật là chưa</small></span><span class="v">Kèm vé</span></div>
-      <div class="row"><span>Phiếu ứng tuyển chương trình 12 tuần<small>Mở cho người dự buổi muốn đi tiếp. Phiếu không phải cam kết mua</small></span><span class="v">Kèm vé</span></div>
-      <div class="total"><span>Tổng giá trị</span><s>1.198.000đ</s></div>
-      <div class="bigprice"><strong>299.000đ</strong><span class="off">Giảm 75%</span></div>
-      <div class="cta"><a class="btn" href="#giu-cho">Giữ chỗ buổi 08/12</a><span class="cap">Thanh toán ở bước sau.</span></div>
-    </div>
-  </div>
-</section>
-
-<section class="sec bg-cream" aria-labelledby="t8">
-  <div class="wrap">
-    <p class="eyebrow">Học viên kể lại</p>
-    <h2 id="t8">Hai vợ chồng nói chuyện tiền bằng con số</h2>
-    <div class="tgrid"><figure class="tcard shot">
-  <a class="tshot" href="f8e766ac03.webp"><img src="f8e766ac03.webp" alt="Tin nhắn học viên: chồng vốn chặt chẽ tiền nong nhưng khi thấy vợ tiết kiệm được 25-30% thì tin tưởng, còn đưa thêm" width="800" height="964" loading="lazy"><span class="zoom-hint">Bấm để phóng to</span></a>
-</figure>
-<figure class="tcard shot">
-  <a class="tshot" href="0a2a874618.webp"><img src="0a2a874618.webp" alt="Tin nhắn học viên: chi tiêu tháng 4 đến 27/4 mới 16,5 triệu, các tháng trước đều đặn 25-30 triệu, chồng tin tưởng vợ hơn" width="800" height="701" loading="lazy"><span class="zoom-hint">Bấm để phóng to</span></a>
-</figure></div>
+    <p class="tk-decline reg-only"><a class="decline" href="04-cam-on-workshop.html?ve=mien-phi" data-decline>Cảm ơn, mình giữ vé miễn phí và nhận link buổi 1</a></p>
   </div>
 </section>
 
 <section class="sec bg-mist" aria-labelledby="t9">
   <div class="wrap text">
     <h2 id="t9">Câu hỏi thường gặp</h2>
-    <details><summary>Bận cả ngày thì có theo được không?</summary><p>Buổi live dài 90 phút, bắt đầu 20h00, khi việc kinh doanh trong ngày đã xong. Nếu sau đó chị đi tiếp chương trình 12 tuần, mỗi tuần là 1 buổi live 90 phút và 60 phút làm bài.</p></details>
-    <details><summary>Có bị bán sản phẩm tài chính không?</summary><p>Không. Thái Ngoan không bán kèm bảo hiểm, quỹ, cổ phiếu hay sản phẩm tài chính nào, và không chọn mã giúp chị. Cuối buổi chỉ có phiếu ứng tuyển chương trình 12 tuần cho ai muốn đi tiếp. Phiếu không phải cam kết mua, và không ai bị chốt trong buổi.</p></details>
-    <details><summary>Chồng chưa tham gia thì sao?</summary><p>Chị bắt đầu một mình được. Trong chương trình 12 tuần có buổi Money Date cùng chồng với trình tự có sẵn, và buổi họp tiền gia đình. Chương trình có hai hình thức tham gia, hình thức nào hợp với nhà chị được trao đổi trong cuộc gọi sau buổi.</p></details>
-    <details><summary>Có cần học đầu tư trước không?</summary><p>Không cần. Ba kết quả của chương trình không đến từ học đầu tư. Tài sản được đặt theo tỷ lệ, không chọn mã. Kiến thức nền tảng về kinh tế, tiền và tài sản nằm ở giai đoạn Grow, sau khi tiền đã tách và lệnh chuyển đã chạy.</p></details>
-    <details><summary>Không dự live được thì sao?</summary><p>Bản ghi gửi trong 24 giờ sau buổi. Vé VIP xem lại bản ghi trong 60 ngày, có mốc cho từng phần. Bài thực hành làm cùng lúc trong buổi sẽ dễ hơn, nên nếu được chị dự trực tiếp. Buổi tiếp theo 20h00 Thứ Năm 07/01/2027.</p></details>
-    <details><summary>Có phải nói số tiền nhà mình trong buổi không?</summary><p>Không. Chị làm phiếu với số tròn, cho riêng mình. Trong chat chị chỉ gõ một chữ: R, T hoặc Rooted. Ai muốn chia sẻ con số thì bật mic, và không ai bình luận số tiền của ai.</p></details>
-    <details><summary>Cần chuẩn bị gì trước buổi?</summary><p>Giấy bút, và số tiền về tay chị tháng 11, số tròn là đủ. Phiếu Money Root 1 trang gửi kèm email nhắc lịch ngày 07/12 để chị in hoặc mở sẵn.</p></details>
-    <details><summary>Thanh toán xong, link vào phòng ở đâu?</summary><p>Link hiện ở trang xác nhận sau thanh toán và được gửi vào email chị điền khi giữ chỗ.</p></details>
-    <div class="cta"><a class="btn" href="#giu-cho">Giữ chỗ buổi 08/12</a></div>
+    <details><summary>Vé miễn phí và vé VIP khác nhau thế&nbsp;nào?</summary><p>Vé miễn phí là buổi 1: thấy vì sao tài sản nhà mình chưa lớn và có con số đầu tiên, xem trực tiếp, không có bản ghi. Vé VIP có thêm buổi 2 để làm trên số của nhà mình: phiếu Money Root 5 bước, chia lại 3 tài khoản, khung họp tiền gia đình, 20 phút hỏi đáp, bản ghi cả 2 buổi và ca học viên chi tiết.</p></details>
+    <details><summary>Giữ vé miễn phí thì sao?</summary><p>Chị vẫn dự buổi 1 miễn phí bình thường. Link vào phòng gửi qua email và Zalo chị điền khi giữ chỗ.</p></details>
+    <details><summary>Tối 11/12 chị bận thì sao?</summary><p>Vé VIP có bản ghi cả 2 buổi, gửi trong 24 giờ sau mỗi buổi. Bài thực hành làm cùng lúc trong buổi sẽ dễ hơn, nên nếu được chị dự trực tiếp.</p></details>
+    <details><summary>Có phải nói số tiền nhà mình trong buổi 2 không?</summary><p>Chị làm phiếu với số tròn, cho riêng mình, số tiền của nhà chị chỉ mình chị biết. Trong chat chị chỉ gõ kiểu quyết tiền của mình: Reactive, Tangled hoặc Rooted.</p></details>
+    <details><summary>Cần chuẩn bị gì cho buổi 2?</summary><p>Giấy bút, và số tiền về tay chị tháng 11, số tròn là đủ. Phiếu Money Root 5 bước gửi qua email trước buổi 2 để chị in hoặc mở sẵn.</p></details>
+    <details><summary>Có bị bán sản phẩm tài chính không?</summary><p>Thái Ngoan không bán kèm bảo hiểm, quỹ, cổ phiếu hay sản phẩm tài chính nào, và không chọn mã giúp chị. Cuối buổi có phiếu ứng tuyển chương trình 12 tuần cho ai muốn đi tiếp; nộp phiếu hay không là chị tự quyết.</p></details>
+    <details><summary>Thanh toán xong, link vào phòng ở&nbsp;đâu?</summary><p>Link vào phòng cả 2 buổi hiện ở trang xác nhận sau thanh toán và được gửi vào email chị điền.</p></details>
+    <div class="cta"><a class="btn" href="#chon-ve">Đăng ký vé VIP</a></div>
   </div>
 </section>
 
 <section class="sec bg-ink" id="giu-cho" aria-labelledby="t10">
   <div class="wrap final-grid">
     <div class="text">
-      <p class="eyebrow">Thứ Ba 08/12/2026, 20h00</p>
-      <h2 id="t10">Giữ chỗ buổi 90 phút để biết tiền nhà mình đang rò ở đâu</h2>
-      <p class="muted">Sau buổi, chị biết tiền nhà mình đang rò ở đâu, biết mình đang quyết tiền theo kiểu nào, và ra về với con số trả mình trước cho tháng 12.</p>
+      <p class="eyebrow">Thứ Năm 10/12 và Thứ Sáu 11/12/2026,&nbsp;20h00</p>
+      <h2 id="t10">Đăng ký vé VIP để làm cùng Thái&nbsp;Ngoan trên số của nhà&nbsp;mình</h2>
+      <p class="muted">Sau 2 buổi, chị có con số trả mình trước cho tháng 12 và ngày họp tiền đầu tiên, biết mình quyết tiền theo kiểu nào, và có tỷ lệ 3 tài khoản bản nháp, tất cả làm ngay trên số của nhà mình.</p>
       <p class="trust"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#C9A96A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>Không bán kèm bảo hiểm, quỹ hay cổ phiếu.</p>
     </div>
     <div class="fbox">
-      <p class="cd-label">Buổi live bắt đầu sau</p>
+      <p class="cd-label">Buổi 2 bắt đầu sau</p>
       <div class="cd" data-cd>
         <div><b data-d>00</b><span>ngày</span></div>
         <div><b data-h>00</b><span>giờ</span></div>
         <div><b data-m>00</b><span>phút</span></div>
         <div><b data-s>00</b><span>giây</span></div>
       </div>
-      <form data-vnc-off class="reg" novalidate>
-        <div class="field"><label for="f-name">Họ và tên</label><input id="f-name" name="fullname" type="text" autocomplete="name" placeholder="Nguyễn Thị Lan"><p class="err">Chị điền họ và tên giúp nhé.</p></div>
-        <div class="field"><label for="f-email">Email nhận link vào phòng</label><input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="ten@email.com"><p class="err">Email chưa đúng định dạng.</p></div>
-        <div class="field"><label for="f-zalo">Số điện thoại Zalo</label><input id="f-zalo" name="zalo" type="tel" autocomplete="tel" inputmode="tel" placeholder="09xx xxx xxx"><p class="err">Số điện thoại Zalo cần 10 chữ số, bắt đầu bằng 0.</p></div>
-        <div class="price"><s>1.198.000đ</s><strong>299.000đ</strong><span class="off">Giảm 75%</span></div>
-        <button class="btn" type="submit">Giữ chỗ buổi 08/12</button>
-        <p class="fnote">Bước sau là thanh toán 299.000đ. Link vào phòng gửi qua email và Zalo.</p>
-      </form>
+      <p class="vb-date">Buổi 2 chỉ dành cho vé VIP: 20h00 Thứ Sáu 11/12/2026, 90 phút.</p>
+      <div class="price"><s>1.198.000đ</s><strong>299.000đ</strong><span class="off">Giảm 75%</span></div>
+      <a class="btn" href="02-thanh-toan-workshop.html" data-vip>Đăng ký vé VIP</a>
+      <p class="fnote reg-only">Thông tin của chị đã có từ bước giữ chỗ, không cần điền lại.</p>
+      <a class="decline reg-only" href="04-cam-on-workshop.html?ve=mien-phi" data-decline>Mình giữ vé miễn phí</a>
     </div>
   </div>
 </section>
@@ -799,8 +666,8 @@ h2{font-size:28px;line-height:36px}
 </footer>
 
 <div class="stick" id="stick" aria-hidden="true">
-  <div class="s-txt"><s>1.198.000đ</s> <b>299.000đ</b><br>Live 20h00 Thứ Ba 08/12</div>
-  <a class="btn" href="#giu-cho" tabindex="-1">Giữ chỗ</a>
+  <div class="s-txt"><s>1.198.000đ</s> <b>299.000đ</b><br>Vé VIP, 2 buổi 10/12 và 11/12</div>
+  <a class="btn" href="#chon-ve" tabindex="-1">Đăng ký vé VIP</a>
 </div>
 
 <dialog class="lb" id="lb" aria-label="Ảnh phóng to"><img alt=""><button type="button" class="lb-x" aria-label="Đóng">×</button></dialog>
@@ -808,7 +675,7 @@ h2{font-size:28px;line-height:36px}
 <script>
 (function () {
   /* Cấu hình: thay các giá trị trong ngoặc vuông. */
-  var CONFIG = { formEndpoint: 'https://script.google.com/macros/s/AKfycbzVv_4f-BZKnlcRw48q89jmtYKAjD6To7Qu_i4j21tG2KSu9RdLm1yz0vMdY--Nlb8pPw/exec', nextUrl: '02-thanh-toan-workshop.html', liveAt: '2026-12-08T20:00:00+07:00' };
+  var CONFIG = { liveAt: '2026-12-11T20:00:00+07:00' };
   function isPh(v) { return !v || v.charAt(0) === '['; }
   function track(e, d) { try { if (typeof fbq === 'function') { fbq('track', e, d || {}); } } catch (x) {} }
   function pad(n) { return n < 10 ? '0' + n : String(n); }
@@ -820,7 +687,7 @@ h2{font-size:28px;line-height:36px}
     var diff = target - Date.now();
     for (var i = 0; i < clocks.length; i += 1) {
       var el = clocks[i];
-      if (diff <= 0) { el.innerHTML = '<p class="cd-done">Buổi 08/12 đã diễn ra. Buổi tiếp theo: 20h00 Thứ Năm 07/01/2027.</p>'; continue; }
+      if (diff <= 0) { el.innerHTML = '<p class="cd-done">Buổi 2 ngày 11/12 đã diễn ra.</p>'; continue; }
       el.querySelector('[data-d]').textContent = pad(Math.floor(diff / 86400000));
       el.querySelector('[data-h]').textContent = pad(Math.floor((diff % 86400000) / 3600000));
       el.querySelector('[data-m]').textContent = pad(Math.floor((diff % 3600000) / 60000));
@@ -830,30 +697,25 @@ h2{font-size:28px;line-height:36px}
   }
   tick();
 
-  function bad(input, isBad) { input.closest('.field').classList.toggle('bad', isBad); return isBad; }
-  Array.prototype.forEach.call(document.querySelectorAll('form.reg'), function (form) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var n = form.querySelector('[name=fullname]'), m = form.querySelector('[name=email]'), z = form.querySelector('[name=zalo]');
-      var errs = [];
-      if (bad(n, n.value.trim().length < 2)) { errs.push(n); }
-      if (bad(m, !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(m.value.trim()))) { errs.push(m); }
-      if (bad(z, !/^(0|\+84)\d{9}$/.test(clean(z.value)))) { errs.push(z); }
-      if (errs.length) { errs[0].focus(); return; }
-      var buyer = { fullname: n.value.trim(), email: m.value.trim(), zalo: clean(z.value) };
-      try { sessionStorage.setItem('mr_buyer', JSON.stringify(buyer)); } catch (x) {}
-      track('Lead', { content_name: 'Money Root Workshop' });
-      if (window.vncSend) { window.vncSend('lead', { fullname: buyer.fullname, email: buyer.email, zalo: buyer.zalo }); }
-      if (!isPh(CONFIG.formEndpoint)) {
-        try {
-          var fd = new FormData();
-          Object.keys(buyer).forEach(function (k) { fd.append(k, buyer[k]); });
-          fd.append('source', '01-workshop-money-root');
-          fetch(CONFIG.formEndpoint, { method: 'POST', body: new URLSearchParams(fd), mode: 'no-cors', keepalive: true });
-        } catch (x) {}
-      }
-      window.location.href = CONFIG.nextUrl;
-    });
+  /* Người vừa đăng ký ở trang 00 (?free=1 hoặc đã có thông tin): hiện dòng xác nhận có tên, không hỏi lại thông tin.
+     Người vào thẳng trang này: ẩn dòng xác nhận, nút phụ dẫn về trang đăng ký miễn phí. */
+  var saved = null, isFree = false;
+  var viaLink = /[?&]free=1\b/.test(window.location.search);
+  try { saved = JSON.parse(sessionStorage.getItem('mr_buyer') || 'null'); isFree = sessionStorage.getItem('mr_free') === '1' || viaLink; if (viaLink) { sessionStorage.setItem('mr_free', '1'); } } catch (x) { isFree = viaLink; }
+  if (isFree) {
+    document.body.classList.remove('no-reg');
+    document.body.classList.add('is-free');
+    var nm = saved && saved.fullname ? saved.fullname.trim().split(/\s+/).pop() : '';
+    var slot = document.querySelector('[data-for-name]');
+    if (slot && nm) { slot.textContent = ' cho chị ' + nm; }
+    var cal = document.getElementById('free-cal');
+    if (cal) { cal.href = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=' + encodeURIComponent('Buổi live miễn phí cùng Thái Ngoan') + '&dates=20261210T130000Z/20261210T143000Z&details=' + encodeURIComponent('Live 90 phút, 20h00 đến 21h30 giờ Việt Nam. Link vào phòng gửi qua email và Zalo. Chuẩn bị: giấy bút và một góc yên trong 90 phút.') + '&location=Online'; }
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('[data-vip]'), function (a) {
+    a.addEventListener('click', function () { track('AddToCart', { content_name: 'Vé VIP Money Root Workshop', value: 299000, currency: 'VND' }); });
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('[data-decline]'), function (a) {
+    a.addEventListener('click', function () { track('Lead', { content_name: 'Giữ vé miễn phí' }); });
   });
 
   var bar = document.getElementById('stick');
@@ -861,10 +723,11 @@ h2{font-size:28px;line-height:36px}
     var seen = {};
     var io = new IntersectionObserver(function (en) {
       en.forEach(function (x) { seen[x.target.id] = x.isIntersecting; });
-      bar.classList.toggle('show', !(seen['dang-ky'] || seen['giu-cho']));
+      bar.classList.toggle('show', !(seen['dang-ky'] || seen['giu-cho'] || seen['chon-ve']));
     });
     io.observe(document.getElementById('dang-ky'));
     io.observe(document.getElementById('giu-cho'));
+    io.observe(document.getElementById('chon-ve'));
   }
 
   /* Phóng to ảnh học viên. Trình duyệt cũ: link mở thẳng ảnh. */
@@ -884,7 +747,6 @@ h2{font-size:28px;line-height:36px}
   }
 })();
 </script>
-<script src="vnc-track.js"></script>
 <script>
 /* Giữ nguồn quảng cáo (UTM) để trang thanh toán gửi kèm đơn. */
 (function () { try { var q = new URLSearchParams(location.search); if (q.get('utm_source')) { sessionStorage.setItem('mr_utm', JSON.stringify({ source: q.get('utm_source'), campaign: q.get('utm_campaign') || '', ad: q.get('utm_content') || '' })); } } catch (x) {} })();
