@@ -328,12 +328,13 @@ h2{font-size:28px;line-height:36px}
         <div><dt>Buổi 1</dt><dd>Thứ Năm 10/12/2026</dd></div>
         <div><dt>Buổi 2</dt><dd>Thứ Sáu 11/12/2026</dd></div>
         <div><dt>Giờ</dt><dd>20h00 đến 21h30 mỗi buổi, giờ Việt Nam</dd></div>
-        <div><dt>Hình thức</dt><dd>Zoom, ID 843 3912 0743</dd></div>
-        <div><dt>Mật khẩu</dt><dd>780573</dd></div>
+        <div><dt>Zoom buổi 1</dt><dd>ID 843 3912 0743, mật khẩu 780573</dd></div>
+        <div><dt>Zoom buổi 2</dt><dd>ID 847 1594 4503, mật khẩu 268559</dd></div>
         <div><dt>Bản ghi</dt><dd>Gửi trong 24 giờ sau mỗi buổi</dd></div>
       </dl>
       <div class="btns">
-        <a class="btn" id="zoom" href="#" target="_blank" rel="noopener">Mở link vào phòng</a>
+        <a class="btn" id="zoom" href="#" target="_blank" rel="noopener">Vào phòng buổi 1 (10/12)</a>
+        <a class="btn" id="zoom2" href="https://us06web.zoom.us/j/84715944503?pwd=EyDzxZZSoNHCllVqOxsNkpYc5po0h7.1" target="_blank" rel="noopener">Vào phòng buổi 2 (11/12)</a>
         <button class="btn ghost" type="button" id="ics"><span>Tải file lịch 2 buổi cho iPhone, Outlook</span></button>
         <a class="btn ghost" id="gcal" href="#" target="_blank" rel="noopener"><span>Thêm buổi 1 vào Google Calendar</span></a>
         <a class="btn ghost" id="gcal2" href="#" target="_blank" rel="noopener">Thêm buổi 2 vào Google Calendar</a>
@@ -379,7 +380,7 @@ h2{font-size:28px;line-height:36px}
     { uid: 'workshop-20261210@thaingoan', title: CONFIG.title, start: CONFIG.start, end: CONFIG.end, el: 'gcal' },
     { uid: 'workshop-20261211@thaingoan', title: CONFIG.title2, start: CONFIG.start2, end: CONFIG.end2, el: 'gcal2' }
   ];
-  var details = 'Live 90 phút, 20h00 đến 21h30 giờ Việt Nam.\nLink vào phòng: ' + CONFIG.zoom + '\nChuẩn bị: giấy bút và một góc yên trong 90 phút. Cho buổi 2: tờ giấy của buổi 1, số tiền về tay tháng 11 (số tròn là đủ) và phiếu Money Root 5 bước gửi qua email.';
+  var details = 'Live 90 phút, 20h00 đến 21h30 giờ Việt Nam.\nBuổi 1: ' + CONFIG.zoom + ' (mật khẩu 780573)\nBuổi 2: https://us06web.zoom.us/j/84715944503?pwd=EyDzxZZSoNHCllVqOxsNkpYc5po0h7.1 (mật khẩu 268559)\n\nChuẩn bị: giấy bút và một góc yên trong 90 phút. Cho buổi 2: tờ giấy của buổi 1, số tiền về tay tháng 11 (số tròn là đủ) và phiếu Money Root 5 bước gửi qua email.';
   var q = window.location.search;
   /* ?vip=1: đã mua thêm gói VIP Plus. Money Date Kit: ?kit=1 hoặc đã tick ở trang thanh toán. */
   function isPh(v) { return !v || v.charAt(0) === '['; }
