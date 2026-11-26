@@ -269,6 +269,16 @@ h2{font-size:28px;line-height:36px}
 .vincl{list-style:none;display:grid;gap:10px}
 .vincl li{display:flex;gap:10px;align-items:flex-start;font-size:15.5px;line-height:24px;color:#14262B}
 .vincl svg{flex:0 0 16px;margin-top:4px}
+
+/* 26/11 gop y VNC: nut Zalo dung dau trang */
+@media(max-width:767px){.co-head .illus{display:none}}
+.zbox{text-align:center;border:2px solid #C9A96A}
+.zbox .step{display:inline-block;margin-bottom:8px;padding:4px 12px;border-radius:999px;background:#0F2A33;color:#F7F2E8;font-size:13px;font-weight:700;letter-spacing:.04em}
+.zbox h2{margin-bottom:8px}
+.zbox p{max-width:460px;margin:0 auto 18px}
+.zbox .btn.zalo{max-width:420px;min-height:64px;font-size:18px;background:#0068FF;color:#fff}
+.zbox .btn.zalo:hover{background:#1A7BFF}
+.zbox .mailnote{margin:16px 0 0;max-width:none;padding:12px 14px;border-radius:12px;background:#FFF6E0;font-size:14.5px;line-height:22px;color:#14262B;text-align:left}
 </style>
 </head>
 <body>
@@ -280,7 +290,7 @@ h2{font-size:28px;line-height:36px}
       <li class="now" aria-current="step">Nhận link</li>
     </ol>
     <h1>Chỗ buổi 1 của chị đã được giữ.</h1>
-    <p class="sub">Hẹn chị 20h00 Thứ Năm 10/12/2026, live 90 phút trên Zoom. Lưu link vào phòng và thêm buổi live vào lịch ngay bây giờ.</p>
+    <p class="sub">Hẹn chị 20h00 Thứ Năm 10/12/2026, live 90 phút trên Zoom. Việc đầu tiên: chị bấm vào nhóm Zalo bên dưới để nhận nhắc lịch và link phòng.</p>
     <svg class="illus" viewBox="0 0 380 150" role="img" aria-labelledby="ill">
       <title id="ill">Lịch hẹn buổi 1: Thứ Năm 10 tháng 12, lúc 20h00, 90 phút</title>
       <g fill="none" stroke="#C9A96A" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><rect x="20" y="22" width="120" height="112" rx="10"/><path d="M20 52h120M52 12v20M108 12v20"/><circle cx="236" cy="78" r="44"/><path d="M236 50v28l18 12"/><path d="M312 60l10 10 22-24" stroke="#9FD3B4" stroke-width="2"/></g>
@@ -294,21 +304,26 @@ h2{font-size:28px;line-height:36px}
 
 <main class="bg-cream co-body">
   <div class="co">
+    <section class="box zbox" aria-labelledby="h-zalo">
+      <span class="step">BƯỚC 1, LÀM NGAY</span>
+      <h2 id="h-zalo">Vào nhóm Zalo buổi live</h2>
+      <p>Link phòng Zoom, nhắc giờ và tài liệu đều được gửi trong nhóm. Chị vào nhóm ngay để không lỡ buổi 1.</p>
+      <a class="btn zalo" href="https://zalo.me/g/5rj2pw3wbky4n6lxbcnw" target="_blank" rel="noopener">Vào nhóm Zalo ngay</a>
+      <p class="mailnote"><b>Link vào phòng đã gửi qua email chị điền khi giữ chỗ.</b> Không thấy email trong Hộp thư đến, chị xem mục Spam hoặc Quảng cáo, rồi bấm "Không phải spam" để các email sau về đúng hộp thư.</p>
+    </section>
+
     <section class="box" aria-labelledby="h-live">
       <h2 id="h-live">Thông tin buổi 1</h2>
       <dl class="info">
         <div><dt>Ngày</dt><dd>Thứ Năm 10/12/2026</dd></div>
         <div><dt>Giờ</dt><dd>20h00 đến 21h30, giờ Việt Nam</dd></div>
-        <div><dt>Hình thức</dt><dd>Zoom, ID 843 3912 0743</dd></div>
-        <div><dt>Mật khẩu</dt><dd>780573</dd></div>
+        <div><dt>Hình thức</dt><dd>Zoom, link gửi qua email và nhóm Zalo</dd></div>
       </dl>
       <div class="btns">
-        <a class="btn" id="zoom" href="#" target="_blank" rel="noopener">Mở link vào phòng</a>
-        <a class="btn ghost" href="https://zalo.me/g/5rj2pw3wbky4n6lxbcnw" target="_blank" rel="noopener">Vào nhóm Zalo buổi live</a>
         <a class="btn ghost" id="gcal" href="#" target="_blank" rel="noopener">Thêm vào Google Calendar</a>
         <button class="btn ghost" type="button" id="ics">Tải file lịch cho iPhone, Outlook</button>
       </div>
-      <p class="small">Link vào phòng cũng được gửi qua email chị điền khi giữ chỗ và nhắc lại trong nhóm Zalo trước giờ học. Không thấy email, chị xem thêm mục Quảng cáo hoặc Spam. Cần hỗ trợ, chị nhắn Zalo <a href="https://zalo.me/0914309986" target="_blank" rel="noopener"><b>0914 309 986</b></a>.</p>
+      <p class="small">Cần hỗ trợ, chị nhắn Zalo <a href="https://zalo.me/0914309986" target="_blank" rel="noopener"><b>0914 309 986</b></a>.</p>
     </section>
 
     <section class="box" aria-labelledby="h-prep">
@@ -346,7 +361,6 @@ h2{font-size:28px;line-height:36px}
   var CONFIG = { zoom: 'https://us06web.zoom.us/j/84339120743?pwd=0MmidJkKoelbwHar4F9s830EzPqoFC.1', title: 'Buổi 1, live 90 phút cùng Thái Ngoan', start: '20261210T130000Z', end: '20261210T143000Z' };
   function track(e, d) { try { if (typeof fbq === 'function') { fbq('track', e, d || {}); } } catch (x) {} }
   var details = 'Live 90 phút, 20h00 đến 21h30 giờ Việt Nam.\nLink vào phòng: ' + CONFIG.zoom + '\nMật khẩu: 780573\nChuẩn bị: giấy bút, một góc yên trong 90 phút, số tiền về tay tháng 11 (số tròn là đủ).';
-  document.getElementById('zoom').href = CONFIG.zoom;
   document.getElementById('gcal').href = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=' + encodeURIComponent(CONFIG.title) + '&dates=' + CONFIG.start + '/' + CONFIG.end + '&details=' + encodeURIComponent(details) + '&location=' + encodeURIComponent(CONFIG.zoom);
   document.getElementById('ics').addEventListener('click', function () {
     function esc(s) { return s.replace(/\\/g, '\\\\').replace(/\n/g, '\\n').replace(/,/g, '\\,').replace(/;/g, '\\;'); }

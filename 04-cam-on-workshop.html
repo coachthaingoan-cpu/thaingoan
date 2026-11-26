@@ -269,6 +269,16 @@ h2{font-size:28px;line-height:36px}
 .vincl{list-style:none;display:grid;gap:10px}
 .vincl li{display:flex;gap:10px;align-items:flex-start;font-size:15.5px;line-height:24px;color:#14262B}
 .vincl svg{flex:0 0 16px;margin-top:4px}
+
+/* 26/11 gop y VNC: nut Zalo dung dau trang */
+@media(max-width:767px){.co-head .illus{display:none}}
+.zbox{text-align:center;border:2px solid #C9A96A}
+.zbox .step{display:inline-block;margin-bottom:8px;padding:4px 12px;border-radius:999px;background:#0F2A33;color:#F7F2E8;font-size:13px;font-weight:700;letter-spacing:.04em}
+.zbox h2{margin-bottom:8px}
+.zbox p{max-width:460px;margin:0 auto 18px}
+.zbox .btn.zalo{max-width:420px;min-height:64px;font-size:18px;background:#0068FF;color:#fff}
+.zbox .btn.zalo:hover{background:#1A7BFF}
+.zbox .mailnote{margin:16px 0 0;max-width:none;padding:12px 14px;border-radius:12px;background:#FFF6E0;font-size:14.5px;line-height:22px;color:#14262B;text-align:left}
 </style>
 </head>
 <body>
@@ -281,7 +291,7 @@ h2{font-size:28px;line-height:36px}
       <li class="now" aria-current="step">Nhận link</li>
     </ol>
     <h1>Vé VIP của chị đã được xác nhận.</h1>
-    <p class="sub">Hẹn chị 2 buổi: 20h00 Thứ Năm 10/12 và Thứ Sáu 11/12/2026. Lưu link vào phòng và thêm 2 buổi live vào lịch ngay bây giờ.</p>
+    <p class="sub">Hẹn chị 2 buổi: 20h00 Thứ Năm 10/12 và Thứ Sáu 11/12/2026. Việc đầu tiên: chị bấm vào nhóm Zalo VIP bên dưới để nhận nhắc lịch và link phòng.</p>
     <svg class="illus" viewBox="0 0 380 150" role="img" aria-labelledby="ill">
       <title id="ill">Lịch hẹn 2 buổi live: Thứ Năm 10 và Thứ Sáu 11 tháng 12, lúc 20h00, 90 phút mỗi buổi</title>
       <g fill="none" stroke="#C9A96A" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><rect x="20" y="22" width="120" height="112" rx="10"/><path d="M20 52h120M52 12v20M108 12v20"/><circle cx="236" cy="78" r="44"/><path d="M236 50v28l18 12"/><path d="M312 60l10 10 22-24" stroke="#9FD3B4" stroke-width="2"/></g>
@@ -295,6 +305,14 @@ h2{font-size:28px;line-height:36px}
 
 <main class="bg-cream co-body">
   <div class="co">
+    <section class="box zbox" aria-labelledby="h-zalo">
+      <span class="step">BƯỚC 1, LÀM NGAY</span>
+      <h2 id="h-zalo">Vào nhóm Zalo vé VIP</h2>
+      <p>Link phòng cả 2 buổi, nhắc giờ, phiếu Money Root trước buổi 2 và bản ghi đều được gửi trong nhóm này.</p>
+      <a class="btn zalo" href="https://zalo.me/g/zrbxfb8sursmu7rbqnvd" target="_blank" rel="noopener">Vào nhóm Zalo VIP ngay</a>
+      <p class="mailnote"><b>Link vào phòng 2 buổi đã gửi qua email chị điền khi đăng ký.</b> Không thấy email trong Hộp thư đến, chị xem mục Spam hoặc Quảng cáo, rồi bấm "Không phải spam" để các email sau về đúng hộp thư.</p>
+    </section>
+
     <section class="vip" aria-live="polite">
       <p><b>Chị đã có gói VIP Plus.</b> Bảng tự tính phiếu Money Root gửi qua email trước buổi 2. Bản ghi có chia mốc gửi sau mỗi buổi, chị xem lại được trong 60 ngày. Trước buổi 2, chị nhắn 1 câu hỏi qua Zalo hỗ trợ để Thái Ngoan trả lời trước trong phần hỏi đáp.</p>
     </section>
@@ -328,18 +346,15 @@ h2{font-size:28px;line-height:36px}
         <div><dt>Buổi 1</dt><dd>Thứ Năm 10/12/2026</dd></div>
         <div><dt>Buổi 2</dt><dd>Thứ Sáu 11/12/2026</dd></div>
         <div><dt>Giờ</dt><dd>20h00 đến 21h30 mỗi buổi, giờ Việt Nam</dd></div>
-        <div><dt>Zoom buổi 1</dt><dd>ID 843 3912 0743, mật khẩu 780573</dd></div>
-        <div><dt>Zoom buổi 2</dt><dd>ID 847 1594 4503, mật khẩu 268559</dd></div>
+        <div><dt>Hình thức</dt><dd>Zoom, link gửi qua email và nhóm Zalo VIP</dd></div>
         <div><dt>Bản ghi</dt><dd>Gửi trong 24 giờ sau mỗi buổi</dd></div>
       </dl>
       <div class="btns">
-        <a class="btn" id="zoom" href="#" target="_blank" rel="noopener">Vào phòng buổi 1 (10/12)</a>
-        <a class="btn" id="zoom2" href="https://us06web.zoom.us/j/84715944503?pwd=EyDzxZZSoNHCllVqOxsNkpYc5po0h7.1" target="_blank" rel="noopener">Vào phòng buổi 2 (11/12)</a>
         <button class="btn ghost" type="button" id="ics"><span>Tải file lịch 2 buổi cho iPhone, Outlook</span></button>
         <a class="btn ghost" id="gcal" href="#" target="_blank" rel="noopener"><span>Thêm buổi 1 vào Google Calendar</span></a>
         <a class="btn ghost" id="gcal2" href="#" target="_blank" rel="noopener">Thêm buổi 2 vào Google Calendar</a>
       </div>
-      <p class="small">Link vào phòng cũng được gửi qua email và Zalo chị điền khi giữ chỗ. Chị vào <a href="https://zalo.me/g/zrbxfb8sursmu7rbqnvd" target="_blank" rel="noopener"><b>nhóm Zalo vé VIP</b></a> để nhận nhắc lịch và phiếu trước buổi 2. Cần hỗ trợ, chị nhắn Zalo <a href="https://zalo.me/0914309986" target="_blank" rel="noopener"><b>0914 309 986</b></a>.</p>
+      <p class="small">Cần hỗ trợ, chị nhắn Zalo <a href="https://zalo.me/0914309986" target="_blank" rel="noopener"><b>0914 309 986</b></a>.</p>
     </section>
 
     <section class="box" aria-labelledby="h-prep">
@@ -389,8 +404,6 @@ h2{font-size:28px;line-height:36px}
   var kit = /[?&]kit=1\b/.test(q);
   try { var b = JSON.parse(sessionStorage.getItem('mr_buyer') || 'null'); if (b && b.bump) { kit = true; } } catch (x) {}
   if (kit) { document.body.classList.add('has-kit'); }
-  var zoom = document.getElementById('zoom');
-  if (isPh(CONFIG.zoom)) { zoom.addEventListener('click', function (e) { e.preventDefault(); alert('Link vào phòng sẽ có ở đây.'); }); } else { zoom.href = CONFIG.zoom; }
   var loc = isPh(CONFIG.zoom) ? 'Online' : CONFIG.zoom;
   EV.forEach(function (ev) {
     document.getElementById(ev.el).href = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=' + encodeURIComponent(ev.title) +
